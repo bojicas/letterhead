@@ -1,5 +1,8 @@
 <template name="MasterLayout">
   <div class="container">
-    {{> yield}}
+    {{> Header}}
+    <div id="main">
+      {{> yield}}
+    </div>
   </div>
 </template>
