@@ -15,3 +15,7 @@ Router.configure({
 Router.route('/', {
   name: 'marketing'
 });
+
+Router.route('/pages', {
+  name: 'pages.index'
+});
