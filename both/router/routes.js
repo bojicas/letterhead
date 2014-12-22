@@ -19,3 +19,7 @@ Router.route('/', {
 Router.route('/pages', {
   name: 'pages.index'
 });
+
+Router.route('/pages/new', {
+  name: 'pages.new'
+});
