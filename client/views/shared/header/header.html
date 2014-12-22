@@ -12,14 +12,16 @@
       </div>
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-              Admin <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="{{pathFor 'pages.index'}}">Pages</a></li>
-            </ul>
-          </li>
+          {{#if currentUser}}
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                Admin <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="{{pathFor 'pages.index'}}">Pages</a></li>
+              </ul>
+            </li>
+          {{/if}}
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}
