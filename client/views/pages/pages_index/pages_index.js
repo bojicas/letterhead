@@ -17,6 +17,9 @@ Template.PagesIndex.helpers({
    *    return Items.find();
    *  }
    */
+  pages: function () {
+    return Pages.find();
+  }
 });
 
 /*****************************************************************************/

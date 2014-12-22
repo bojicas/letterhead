@@ -13,9 +13,9 @@
     </div>
 
     <ul class="list-group">
-      <li class="list-group-item"><a href="#">Awesome Meteor</a></li>
-      <li class="list-group-item"><a href="#">Leterhead Features</a></li>
-      <li class="list-group-item"><a href="#">About Us</a></li>
+      {{#each pages}}
+        <li class="list-group-item"><a href="#">{{title}}</a></li>
+      {{/each}}
     </ul>
   </div>
 </template>
