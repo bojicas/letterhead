@@ -8,6 +8,13 @@ Template.PagesNew.events({
    *
    *  }
    */
+  'submit form': function (e, tmpl) {
+    e.preventDefault();
+    var title = tmpl.find('#pageTitle').value;
+
+    Pages.insert({ title: title });
+    Router.go('pages.index');
+  }
 });
 
 Template.PagesNew.helpers({
