@@ -15,6 +15,11 @@
     <ul class="list-group">
       {{#each pages}}
         <li class="list-group-item"><a href="{{pathFor 'pages.show'}}">{{title}}</a></li>
+      {{else}}
+      <li class="list-group-item">
+        No pages yet. Click/tap <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        on top-right corner to create one.
+      </li>
       {{/each}}
     </ul>
   </div>
