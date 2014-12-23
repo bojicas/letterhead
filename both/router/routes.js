@@ -27,3 +27,5 @@ Router.route('/pages/new', {
 Router.route('/pages/:_id', {
   name: 'pages.show'
 });
+
+Router.onBeforeAction('dataNotFound');

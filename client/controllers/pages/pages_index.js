@@ -3,8 +3,8 @@ PagesIndexController = RouteController.extend({
     return Meteor.subscribe('pages_index');
   },
 
-  data: function () {
-  },
+  // data: function () {
+  // },
 
   action: function () {
     this.render();
