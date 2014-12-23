@@ -1,40 +1,37 @@
 /*****************************************************************************/
-/* PagesShow: Event Handlers and Helpersss .js*/
+/* PageTitleShow: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.PagesShow.events({
+Template.PageTitleShow.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
    *
    *  }
    */
+  'click #page-title-edit-action': function (e) {
+    e.preventDefault();
+
+    Session.set('editTitle', this._id);
+  }
 });
 
-Template.PagesShow.helpers({
+Template.PageTitleShow.helpers({
   /*
    * Example:
    *  items: function () {
    *    return Items.find();
    *  }
    */
-  editTitle: function () {
-    if (Meteor.user() && Session.get('editTitle') === this._id) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 });
 
 /*****************************************************************************/
-/* PagesShow: Lifecycle Hooks */
+/* PageTitleShow: Lifecycle Hooks */
 /*****************************************************************************/
-Template.PagesShow.created = function () {
+Template.PageTitleShow.created = function () {
 };
 
-Template.PagesShow.rendered = function () {
-  Session.set('editTitle', null);
+Template.PageTitleShow.rendered = function () {
 };
 
-Template.PagesShow.destroyed = function () {
+Template.PageTitleShow.destroyed = function () {
 };

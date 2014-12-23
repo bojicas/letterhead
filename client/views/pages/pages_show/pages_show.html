@@ -5,10 +5,11 @@
     <li>{{title}}</li>
   </ol>
 
-  <h1>
-    {{title}}
-    {{#if currentUser}}
-      <a href="#"><span class="glyphicon glyphicon-pencil action-symbol" aria-hidden="true"></span></a>
+  <article>
+    {{#if editTitle}}
+      {{> PageTitleEdit}}
+    {{else}}
+      {{> PageTitleShow}}
     {{/if}}
-  </h1>
+  </article>
 </template>

@@ -1,0 +1,9 @@
+<template name="PageTitleEdit">
+  {{#if currentUser}}
+    <form role="form" id="page-title-edit">
+      <div class="form-group">
+        <input type="text" class="form-control" id="pageTitle" placeholder="Enter Title" value="{{title}}" />
+      </div>
+    </form>
+  {{/if}}
+</template>

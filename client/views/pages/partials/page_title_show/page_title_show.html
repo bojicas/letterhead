@@ -1,0 +1,10 @@
+<template name="PageTitleShow">
+  <h1 id="page-title-show">
+    {{title}}
+    {{#if currentUser}}
+      <a href="#" id="page-title-edit-action">
+        <span class="glyphicon glyphicon-pencil action-symbol" aria-hidden="true"></span>
+      </a>
+    {{/if}}
+  </h1>
+</template>
