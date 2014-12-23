@@ -17,6 +17,11 @@ Template.PagesShow.helpers({
    *    return Items.find();
    *  }
    */
+
+  paragraphs: function () {
+    return Paragraphs.find();
+  },
+
   editTitle: function () {
     if (Meteor.user() && Session.get('editTitle') === this._id) {
       return true;
