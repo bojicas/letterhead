@@ -12,8 +12,8 @@ Template.PagesNew.events({
     e.preventDefault();
     var title = tmpl.find('#pageTitle').value;
 
-    Pages.insert({ title: title });
-    Router.go('pages.index');
+    var pageId = Pages.insert({ title: title });
+    Router.go('pages.show', { _id: pageId});
   }
 });
 

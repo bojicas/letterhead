@@ -20,10 +20,10 @@ Router.route('/pages', {
   name: 'pages.index'
 });
 
-Router.route('/pages/:_id', {
-  name: 'pages.show'
-});
-
 Router.route('/pages/new', {
   name: 'pages.new'
+});
+
+Router.route('/pages/:_id', {
+  name: 'pages.show'
 });
