@@ -23,8 +23,10 @@
       </p>
     {{/each}}
 
-    {{#if currentUser}}
-      <a href="#">
+    {{#if newParagraph}}
+      {{> ParagraphsNew}}
+    {{else}}
+      <a href="#" id="new-paragraph-action">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
         Add paragraph
       </a>
