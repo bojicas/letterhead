@@ -8,6 +8,20 @@ Template.ParagraphsNew.events({
    *
    *  }
    */
+  'submit #new-paragraph-form': function (e, tmpl) {
+    e.preventDefault();
+
+    var pageId = this._id;
+
+    var content = tmpl.find('#newParagraph').value;
+
+    Paragraphs.insert({
+      pageId: pageId,
+      content: content
+    });
+
+    Session.set('newParagraph', null);
+  }
 });
 
 Template.ParagraphsNew.helpers({
