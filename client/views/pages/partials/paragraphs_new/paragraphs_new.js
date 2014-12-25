@@ -17,7 +17,8 @@ Template.ParagraphsNew.events({
 
     Paragraphs.insert({
       pageId: pageId,
-      content: content
+      content: content,
+      rank: Paragraphs.find().count() + 1
     });
 
     Session.set('newParagraph', null);
