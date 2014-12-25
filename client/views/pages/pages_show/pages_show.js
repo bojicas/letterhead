@@ -18,7 +18,6 @@ Template.PagesShow.events({
     e.preventDefault();
 
     Session.set('editParagraph', this._id);
-    alert('Edting: ' + this._id + ' page: ' + this.pageId);
   }
 });
 
@@ -68,6 +67,7 @@ Template.PagesShow.created = function () {
 Template.PagesShow.rendered = function () {
   Session.set('editTitle', null);
   Session.set('newParagraph', null);
+  Session.set('editParagraph', null);
 };
 
 Template.PagesShow.destroyed = function () {
