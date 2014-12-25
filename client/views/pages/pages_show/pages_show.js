@@ -12,12 +12,6 @@ Template.PagesShow.events({
     e.preventDefault();
 
     Session.set('newParagraph', this._id);
-  },
-
-  'click .edit-paragraph-action': function (e) {
-    e.preventDefault();
-
-    Session.set('editParagraph', this._id);
   }
 });
 
