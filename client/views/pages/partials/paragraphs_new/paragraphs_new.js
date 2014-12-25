@@ -21,6 +21,12 @@ Template.ParagraphsNew.events({
     });
 
     Session.set('newParagraph', null);
+  },
+
+  'click #cancel-new-paragraph': function (e) {
+    e.preventDefault();
+
+    Session.set('newParagraph', null);
   }
 });
 
