@@ -12,6 +12,13 @@ Template.PagesShow.events({
     e.preventDefault();
 
     Session.set('newParagraph', this._id);
+  },
+
+  'click .edit-paragraph-action': function (e) {
+    e.preventDefault();
+
+    Session.set('editParagraph', this._id);
+    alert('Edting: ' + this._id + ' page: ' + this.pageId);
   }
 });
 
@@ -37,6 +44,14 @@ Template.PagesShow.helpers({
 
   newParagraph: function () {
     if (Meteor.user() && Session.get('newParagraph') === this._id) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  editParagraph: function () {
+    if (Meteor.user() && Session.get('editParagraph') === this._id) {
       return true;
     } else {
       return false;
