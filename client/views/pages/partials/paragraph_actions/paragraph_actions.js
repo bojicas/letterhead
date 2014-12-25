@@ -22,6 +22,38 @@ Template.ParagraphActions.events({
     if (deleteParagraph) {
       Paragraphs.remove({ _id: this._id });
     }
+  },
+
+  'click .move-up-paragraph-action': function (e) {
+    e.preventDefault();
+
+    if (this.rank > 1) {
+      var swapId = Paragraphs.findOne({ rank: this.rank - 1 })._id;
+
+      Paragraphs.update({ _id: this._id }, {
+        $set: { rank: this.rank - 1 }
+      });
+
+      Paragraphs.update({ _id: swapId }, {
+        $set: { rank: this.rank }
+      });
+    }
+  },
+
+  'click .move-down-paragraph-action': function (e) {
+    e.preventDefault();
+
+    if (this.rank < Paragraphs.find().count()) {
+      var swapId = Paragraphs.findOne({ rank: this.rank + 1 })._id;
+
+      Paragraphs.update({ _id: this._id }, {
+        $set: { rank: this.rank + 1 }
+      });
+
+      Paragraphs.update({ _id: swapId }, {
+        $set: { rank: this.rank }
+      });
+    }
   }
 
 });
