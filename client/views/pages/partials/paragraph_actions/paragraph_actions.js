@@ -33,6 +33,13 @@ Template.ParagraphActions.helpers({
    *    return Items.find();
    *  }
    */
+  showUpAction: function () {
+    return this.rank > 1;
+  },
+
+  showDownAction: function () {
+    return this.rank < Paragraphs.find().count();
+  }
 });
 
 /*****************************************************************************/
