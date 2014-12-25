@@ -12,7 +12,18 @@ Template.ParagraphActions.events({
     e.preventDefault();
 
     Session.set('editParagraph', this._id);
+  },
+
+  'click .delete-paragraph-action': function (e) {
+    e.preventDefault();
+
+    var deleteParagraph = confirm('Are you sure you want to delete this paragraph?');
+
+    if (deleteParagraph) {
+      Paragraphs.remove({ _id: this._id });
+    }
   }
+
 });
 
 Template.ParagraphActions.helpers({
