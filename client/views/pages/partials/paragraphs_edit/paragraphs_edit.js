@@ -8,6 +8,11 @@ Template.ParagraphsEdit.events({
    *
    *  }
    */
+  'click #cancel-edit-paragraph': function (e) {
+    e.preventDefault();
+
+    Session.set('editParagraph', null);
+  }
 });
 
 Template.ParagraphsEdit.helpers({
