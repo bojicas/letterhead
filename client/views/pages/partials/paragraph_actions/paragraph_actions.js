@@ -71,6 +71,10 @@ Template.ParagraphActions.helpers({
 
   showDownAction: function () {
     return this.rank < Paragraphs.find().count();
+  },
+
+  showUpDownDivider: function () {
+    return Paragraphs.find().count() > 1;
   }
 });
 
