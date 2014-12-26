@@ -1,0 +1,10 @@
+<template name="Alerts">
+  <div class="alerts">
+    {{#each alerts}}
+      <div class="alert alert-{{type}}" role="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{message}}
+      </div>
+    {{/each}}
+  </div>
+</template>
