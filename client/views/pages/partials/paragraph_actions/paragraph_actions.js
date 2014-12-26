@@ -20,7 +20,8 @@ Template.ParagraphActions.events({
     var deleteParagraph = confirm('Are you sure you want to delete this paragraph?');
 
     if (deleteParagraph) {
-      Paragraphs.remove({ _id: this._id });
+      Meteor.call('paragraphsDelete', this);
+      // Paragraphs.remove({ _id: this._id });
     }
   },
 
