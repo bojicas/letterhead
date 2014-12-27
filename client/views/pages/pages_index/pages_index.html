@@ -15,8 +15,8 @@
     <ul class="list-group">
       {{#each pages}}
         <li class="list-group-item">
-          <a href="{{pathFor 'pages.show'}}">{{title}}</a><br />
-          <small>20 paragraphs</small>
+          <a href="{{pathFor 'pages.show'}}" class="lead">{{title}}</a><br />
+          <small>{{pluralize paragraphs 'paragraph'}}</small>
         </li>
       {{else}}
       <li class="list-group-item">

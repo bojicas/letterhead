@@ -11,6 +11,13 @@ _.extend(App, {
 });
 
 App.helpers = {
+  pluralize: function (n, thing) {
+    if (n === 1) {
+      return '1 ' + thing;
+    } else {
+      return n + ' ' + thing + 's';
+    }
+  }
 };
 
 _.each(App.helpers, function (helper, key) {

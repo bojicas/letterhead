@@ -15,6 +15,10 @@ Template.ParagraphsNew.events({
 
     var content = tmpl.find('#newParagraph').value;
 
+    Pages.update({ _id: pageId }, {
+      $inc: { paragraphs: 1 }
+    });
+
     Paragraphs.insert({
       pageId: pageId,
       content: content,

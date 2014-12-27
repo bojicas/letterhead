@@ -12,7 +12,10 @@ Template.PagesNew.events({
     e.preventDefault();
     var title = tmpl.find('#pageTitle').value;
 
-    var pageId = Pages.insert({ title: title });
+    var pageId = Pages.insert({
+      title: title,
+      paragraphs: 0
+    });
     App.setAlert('New page created.', 'success');
     Router.go('pages.show', { _id: pageId});
   }
