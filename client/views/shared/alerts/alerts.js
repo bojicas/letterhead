@@ -33,3 +33,13 @@ Template.Alerts.rendered = function () {
 
 Template.Alerts.destroyed = function () {
 };
+
+/*****************************************************************************/
+/* Alert: Lifecycle Hooks */
+/*****************************************************************************/
+Template.Alert.rendered = function () {
+  var currentAlert = this.data;
+  Meteor.setTimeout(function () {
+    Alerts.remove(currentAlert._id);
+  }, 3000);
+};
