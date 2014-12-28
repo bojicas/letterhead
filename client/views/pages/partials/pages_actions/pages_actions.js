@@ -11,9 +11,12 @@ Template.PagesActions.events({
   'click .lh-make-index': function (e) {
     e.preventDefault();
 
-    Pages.update({ _id: Pages.findOne({ type: 'INDEX' })._id }, {
-      $unset: { type: '' }
-    });
+    var oldIndex = Pages.findOne({ type: 'INDEX' });
+    if (oldIndex) {
+      Pages.update({ _id: oldIndex._id }, {
+        $unset: { type: '' }
+      });
+    }
     Pages.update({ _id: this._id }, {
       $set: { type: 'INDEX' }
     });
