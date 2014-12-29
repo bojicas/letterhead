@@ -28,4 +28,8 @@ Router.route('/pages/:_id', {
   name: 'pages.show'
 });
 
+Router.route('/settings', {
+  name: 'settings.index'
+});
+
 Router.onBeforeAction('dataNotFound');
