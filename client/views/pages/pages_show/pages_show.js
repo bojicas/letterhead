@@ -12,6 +12,12 @@ Template.PagesShow.events({
     e.preventDefault();
 
     Session.set('newParagraph', this._id);
+  },
+
+  'click #delete-page-action': function (e) {
+    e.preventDefault();
+
+    alert('Deleting the page');
   }
 });
 
@@ -25,6 +31,10 @@ Template.PagesShow.helpers({
 
   paragraphs: function () {
     return Paragraphs.find({}, { sort: { rank: 1 } });
+  },
+
+  emptyPage: function () {
+    return Paragraphs.find().count() === 0;
   },
 
   editTitle: function () {

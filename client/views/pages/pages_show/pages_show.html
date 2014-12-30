@@ -42,6 +42,13 @@
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           Add paragraph
         </a>
+        {{#if emptyPage}}
+          <br/>
+          <a href="#" id="delete-page-action">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            Delete page
+          </a>
+        {{/if}}
       {{/if}}
     {{/if}}
   </article>
