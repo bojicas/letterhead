@@ -1,7 +1,11 @@
 <template name="MasterLayout">
-  {{> Header}}
-  {{> Alerts}}
+  <header>
+    {{> Header}}
+    {{> Alerts}}
+  </header>
   <div id="main" class="container">
-    {{> yield}}
+    <div class="row">
+      {{> yield}}
+    </div>
   </div>
 </template>

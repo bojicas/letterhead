@@ -9,11 +9,13 @@
   {{/if}}
 
   <article>
-    {{#if editTitle}}
-      {{> PageTitleEdit}}
-    {{else}}
-      {{> PageTitleShow}}
-    {{/if}}
+    <header>
+      {{#if editTitle}}
+        {{> PageTitleEdit}}
+      {{else}}
+        {{> PageTitleShow}}
+      {{/if}}
+    </header>
 
     {{#each paragraphs}}
       <div>

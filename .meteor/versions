@@ -21,7 +21,7 @@ handlebars@1.0.2
 html-tools@1.0.3
 htmljs@1.0.3
 http@1.0.9
-ian:accounts-ui-bootstrap-3@1.2.5
+ian:accounts-ui-bootstrap-3@1.2.7
 id-map@1.0.2
 iron:controller@1.0.6
 iron:core@1.0.6
@@ -59,6 +59,7 @@ session@1.0.5
 sha@1.0.2
 spacebars@1.0.4
 spacebars-compiler@1.0.4
+spiderable@1.0.6
 srp@1.0.2
 stylus@1.0.6
 templating@1.0.10
