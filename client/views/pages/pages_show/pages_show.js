@@ -17,7 +17,18 @@ Template.PagesShow.events({
   'click #delete-page-action': function (e) {
     e.preventDefault();
 
-    alert('Deleting the page');
+    var deletePage = confirm('Are you sure you want to delete this page?');
+
+    if (deletePage) {
+      Meteor.call('pagesDelete', this, function (error, result) {
+        if (error) {
+          return App.setAlert(error.reason, 'danger');
+        } 
+
+        App.setAlert('Page deleted.', 'success');
+        Router.go('pages.index');
+      });
+    }
   }
 });
 

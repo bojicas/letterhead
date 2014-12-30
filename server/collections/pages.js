@@ -14,7 +14,7 @@ Pages.allow({
   },
 
   remove: function (userId, doc) {
-    return true;
+    return false;
   }
 });
 
@@ -28,6 +28,6 @@ Pages.deny({
   },
 
   remove: function (userId, doc) {
-    return false;
+    return true;
   }
 });

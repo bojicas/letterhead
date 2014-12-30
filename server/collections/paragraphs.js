@@ -14,7 +14,7 @@ Paragraphs.allow({
   },
 
   remove: function (userId, doc) {
-    return true;
+    return false;
   }
 });
 
@@ -28,6 +28,6 @@ Paragraphs.deny({
   },
 
   remove: function (userId, doc) {
-    return false;
+    return true;
   }
 });
