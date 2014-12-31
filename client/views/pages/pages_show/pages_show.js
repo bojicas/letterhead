@@ -12,23 +12,6 @@ Template.PagesShow.events({
     e.preventDefault();
 
     Session.set('newParagraph', this._id);
-  },
-
-  'click #delete-page-action': function (e) {
-    e.preventDefault();
-
-    var deletePage = confirm('Are you sure you want to delete this page?');
-
-    if (deletePage) {
-      Meteor.call('pagesDelete', this, function (error, result) {
-        if (error) {
-          return App.setAlert(error.reason, 'danger');
-        } 
-
-        App.setAlert('Page deleted.', 'success');
-        Router.go('pages.index');
-      });
-    }
   }
 });
 
@@ -42,10 +25,6 @@ Template.PagesShow.helpers({
 
   paragraphs: function () {
     return Paragraphs.find({}, { sort: { rank: 1 } });
-  },
-
-  emptyPage: function () {
-    return Paragraphs.find().count() === 0;
   },
 
   editTitle: function () {

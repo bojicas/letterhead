@@ -13,15 +13,21 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu" aria-labelledby="page-title-settings-action">
+          <li role="presentation" class="dropdown-header">General</li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
             <span class="glyphicon glyphicon-wrench"></span>
-            Settings</a>
+            Page Settings</a>
           </li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">
-            <span class="glyphicon glyphicon-trash"></span>
-            Delete</a>
-          </li>
+          {{#if emptyPage}}
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header text-danger">Danger Zone!</li>
+            <li role="presentation" id="delete-page-action">
+              <a role="menuitem" tabindex="-1" href="#">
+                <span class="glyphicon glyphicon-trash text-danger"></span>
+                <span class="text-danger">Delete Page</span>
+              </a>
+            </li>
+          {{/if}}
         </ul>
       </div>
       <h1 id="page-title-show">
