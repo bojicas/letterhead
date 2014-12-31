@@ -48,6 +48,10 @@ Template.PagesShow.helpers({
     return Paragraphs.find().count() === 0;
   },
 
+  otherTag: function () {
+    return this.content[0] === '<';
+  },
+
   editTitle: function () {
     if (Meteor.user() && Session.get('editTitle') === this._id) {
       return true;

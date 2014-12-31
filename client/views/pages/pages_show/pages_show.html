@@ -10,52 +10,58 @@
     </div>
   {{/if}}
 
-  <div class="col-xs-12">
-    <article>
-      <header>
-        {{#if editTitle}}
-          {{> PageTitleEdit}}
-        {{else}}
-          {{> PageTitleShow}}
-        {{/if}}
-      </header>
-
-      {{#each paragraphs}}
-        <div>
-          {{#if editParagraph}}
-            {{> ParagraphsEdit}}
-          {{else}}
-            {{#if currentUser}}
-              <div class="hover-paragraph">
-                <p>
-                  {{{content}}}
-                  {{> ParagraphActions}}
-                </p>
-              </div>
-            {{else}}
-              <p>{{{content}}}</p>
-            {{/if}}
-          {{/if}}
-        </div>
-      {{/each}}
-
-      {{#if newParagraph}}
-        {{> ParagraphsNew}}
+  <article class="col-xs-12">
+    <header>
+      {{#if editTitle}}
+        {{> PageTitleEdit}}
       {{else}}
-        {{#if currentUser}}
-          <a href="#" id="new-paragraph-action">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            Add paragraph
+        {{> PageTitleShow}}
+      {{/if}}
+    </header>
+
+    {{#each paragraphs}}
+      {{#if otherTag}}
+        <div>
+          {{> ParagraphsShow}}
+        </div>
+      {{else}}
+        <p>
+          {{> ParagraphsShow}}
+        </p>
+      {{/if}}
+    {{/each}}
+
+    {{#if newParagraph}}
+      {{> ParagraphsNew}}
+    {{else}}
+      {{#if currentUser}}
+        <a href="#" id="new-paragraph-action">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          Add paragraph
+        </a>
+        {{#if emptyPage}}
+          <br/>
+          <a href="#" id="delete-page-action">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            Delete page
           </a>
-          {{#if emptyPage}}
-            <br/>
-            <a href="#" id="delete-page-action">
-              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-              Delete page
-            </a>
-          {{/if}}
         {{/if}}
       {{/if}}
-    </article>
-  </div>
+    {{/if}}
+  </article>
+</template>
+
+<template name="ParagraphsShow">
+  {{#if editParagraph}}
+    {{> ParagraphsEdit}}
+  {{else}}
+    {{#if currentUser}}
+      <div class="hover-paragraph">
+        {{{content}}}
+        {{> ParagraphActions}}
+      </div>
+    {{else}}
+      {{{content}}}
+    {{/if}}
+  {{/if}}
 </template>
