@@ -20,15 +20,22 @@
     </header>
 
     {{#each paragraphs}}
-      {{#if otherTag}}
-        <div>
-          {{> ParagraphsShow}}
-        </div>
-      {{else}}
-        <p>
-          {{> ParagraphsShow}}
-        </p>
-      {{/if}}
+      <div>
+        {{#if editParagraph}}
+          {{> ParagraphsEdit}}
+        {{else}}
+          {{#if currentUser}}
+            <div class="hover-paragraph">
+              <p>
+                {{{content}}}
+                {{> ParagraphActions}}
+              </p>
+            </div>
+          {{else}}
+            <p>{{{content}}}</p>
+          {{/if}}
+        {{/if}}
+      </div>
     {{/each}}
 
     {{#if newParagraph}}
@@ -49,19 +56,4 @@
       {{/if}}
     {{/if}}
   </article>
-</template>
-
-<template name="ParagraphsShow">
-  {{#if editParagraph}}
-    {{> ParagraphsEdit}}
-  {{else}}
-    {{#if currentUser}}
-      <div class="hover-paragraph">
-        {{{content}}}
-        {{> ParagraphActions}}
-      </div>
-    {{else}}
-      {{{content}}}
-    {{/if}}
-  {{/if}}
 </template>
