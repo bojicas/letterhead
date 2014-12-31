@@ -1,3 +1,31 @@
 /*****************************************************************************/
 /* PageTitleShow: Style */
 /*****************************************************************************/
+.hover-page-title {
+  position: relative;
+}
+
+.hover-page-title:first-child {
+  border: 1px dotted rgba(0,0,0,0);
+}
+
+.hover-page-title:first-child:hover {
+  border: 1px dotted silver;
+  border-radius: 5px;
+
+  .page-title-actions {
+    display: block;
+  }
+}
+
+.page-title-actions {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: none;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: rgba(225, 225, 225, .9);
+  padding-left: 7px;
+  padding-right: 7px;
+}
