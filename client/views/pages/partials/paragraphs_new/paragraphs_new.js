@@ -45,6 +45,7 @@ Template.ParagraphsNew.helpers({
   editorOptions: function () {
     return {
       lineNumbers: true,
+      lineWrapping: true,
       tabSize: 2,
       mode: 'htmlmixed'
     };
