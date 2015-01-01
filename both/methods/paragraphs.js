@@ -15,7 +15,7 @@ Meteor.methods({
       $inc: { paragraphs: -1 }
     });
    Paragraphs.remove({ _id: paragraph._id });
-   Paragraphs.update({ rank: { $gt: paragraph.rank } }, {
+   Paragraphs.update({ pageId: paragraph.pageID, rank: { $gt: paragraph.rank } }, {
      $inc: { rank: -1 }
    }, {
      multi: true
