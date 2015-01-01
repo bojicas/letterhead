@@ -42,6 +42,13 @@ Template.ParagraphsNew.helpers({
    *    return Items.find();
    *  }
    */
+  editorOptions: function () {
+    return {
+      lineNumbers: true,
+      tabSize: 2,
+      mode: 'htmlmixed'
+    };
+  }
 });
 
 /*****************************************************************************/

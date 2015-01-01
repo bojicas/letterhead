@@ -1,7 +1,10 @@
 <template name="ParagraphsNew">
   <form role="form" id="new-paragraph-form">
     <div class="form-group">
+      {{> CodeMirror id="newParagraph" options=editorOptions}}
+      <!--
       <textarea id="newParagraph" class="form-control" rows="5" placeholder="Enter paragraph"></textarea>
+      -->
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a class="btn btn-default" id="cancel-new-paragraph">Cancel</a>

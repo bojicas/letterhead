@@ -1,7 +1,10 @@
 <template name="ParagraphsEdit">
   <form role="form" id="edit-paragraph-form">
     <div class="form-group">
+      {{> CodeMirror id="editParagraph" options=editorOptions code=content}}
+      <!--
       <textarea id="editParagraph" class="form-control" rows="5" placeholder="Enter paragraph" value={{content}}></textarea>
+      -->
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a class="btn btn-default" id="cancel-edit-paragraph">Cancel</a>
