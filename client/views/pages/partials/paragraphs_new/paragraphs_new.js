@@ -26,12 +26,14 @@ Template.ParagraphsNew.events({
     });
 
     Session.set('newParagraph', null);
+    Session.set('newParagraphContent', null);
   },
 
   'click #cancel-new-paragraph': function (e) {
     e.preventDefault();
 
     Session.set('newParagraph', null);
+    Session.set('newParagraphContent', content);
   },
 
   'click #new-smart-editor-toggle': function (e, tmpl) {
