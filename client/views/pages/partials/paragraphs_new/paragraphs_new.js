@@ -34,8 +34,11 @@ Template.ParagraphsNew.events({
     Session.set('newParagraph', null);
   },
 
-  'click #smart-editor-toggle': function (e) {
+  'click #new-smart-editor-toggle': function (e, tmpl) {
     e.preventDefault();
+
+    var content = tmpl.find('#newParagraph').value;
+    Session.set('newParagraphContent', content);
 
     if (Session.get('smartEditor')) {
       Session.set('smartEditor', false);
@@ -76,6 +79,10 @@ Template.ParagraphsNew.helpers({
     } else {
       return false;
     }
+  },
+
+  content: function () {
+    return Session.get('newParagraphContent');
   }
 });
 
@@ -86,6 +93,7 @@ Template.ParagraphsNew.created = function () {
 };
 
 Template.ParagraphsNew.rendered = function () {
+  Session.set('newParagraphContent', null);
   if (!Session.get('smartEditor')) {
     $('.new-paragraph-text-area').autosize();
   } else {
