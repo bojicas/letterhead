@@ -6,9 +6,9 @@ Digital content management system and blog platform, developed with Meteor.
 Product Page
 ------------
 
-* [http://letterhead.bojica.com](http://letterhead.bojica.com/pages/NM7vkcvgcj35FWgAL)
+* [http://letterhead.io](http://letterhead.io)
 
 Roadmap
 -------
 
-* [Trello Board](https://trello.com/b/cBSUihVq/letterhead)
+* [Letterhead Development Board](https://trello.com/b/cBSUihVq/letterhead-development)
