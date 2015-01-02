@@ -49,6 +49,14 @@ Template.ParagraphsNew.helpers({
       tabSize: 2,
       mode: 'htmlmixed'
     };
+  },
+
+  smartEditor: function () {
+    if (Session.get('smartEditor')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 
