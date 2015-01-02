@@ -32,6 +32,18 @@ Template.ParagraphsNew.events({
     e.preventDefault();
 
     Session.set('newParagraph', null);
+  },
+
+  'click #smart-editor-toggle': function (e) {
+    e.preventDefault();
+
+    if (Session.get('smartEditor')) {
+      Session.set('smartEditor', false);
+      App.setAlert('Text area editor enabled.', 'info');
+    } else {
+      Session.set('smartEditor', true);
+      App.setAlert('Smart editor enabled.', 'info');
+    }
   }
 });
 

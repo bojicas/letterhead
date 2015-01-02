@@ -62,6 +62,10 @@ Template.PagesShow.rendered = function () {
   Session.set('editTitle', null);
   Session.set('newParagraph', null);
   Session.set('editParagraph', null);
+
+  if (Session.get('smartEditor') === undefined) {
+    Session.set('smartEditor', true);
+  }
 };
 
 Template.PagesShow.destroyed = function () {

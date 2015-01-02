@@ -1,5 +1,5 @@
 <template name="ParagraphsEdit">
-  <form role="form" id="edit-paragraph-form">
+  <form role="form" id="edit-paragraph-form" class="form-editor">
     <div class="form-group">
       {{#if smartEditor}}
         {{> CodeMirror id="editParagraph" options=editorOptions code=content}}
@@ -9,5 +9,11 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a class="btn btn-default" id="cancel-edit-paragraph">Cancel</a>
+
+    {{#if smartEditor}}
+      <a class="btn btn-default pull-right" id="smart-editor-toggle">Enable Text Area Editor</a>
+    {{else}}
+      <a class="btn btn-default pull-right" id="smart-editor-toggle">Enable Smart Editor</a>
+    {{/if}}
   </form>
 </template>
