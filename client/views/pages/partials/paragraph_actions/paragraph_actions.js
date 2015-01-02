@@ -55,18 +55,6 @@ Template.ParagraphActions.events({
         $set: { rank: this.rank }
       });
     }
-  },
-
-  'click .smart-editor-action': function (e) {
-    e.preventDefault();
-
-    if (Session.get('smartEditor')) {
-      App.setAlert('Text area editor enabled.', 'info');
-      Session.set('smartEditor', false);
-    } else {
-      App.setAlert('Smart editor enabled.', 'info');
-      Session.set('smartEditor', true);
-    }
   }
 
 });
@@ -88,14 +76,6 @@ Template.ParagraphActions.helpers({
 
   showUpDownDivider: function () {
     return Paragraphs.find().count() > 1;
-  },
-
-  smartEditorToggle: function () {
-    if (Session.get('smartEditor') === true) {
-      return 'check';
-    } else {
-      return 'unchecked';
-    }
   }
 });
 
@@ -106,9 +86,6 @@ Template.ParagraphActions.created = function () {
 };
 
 Template.ParagraphActions.rendered = function() {
-  if (Session.get('smartEditor') === undefined) {
-    Session.set('smartEditor', true);
-  }
 };
 
 Template.ParagraphActions.destroyed = function () {
