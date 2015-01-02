@@ -18,12 +18,14 @@ Template.ParagraphsEdit.events({
     );
 
     Session.set('editParagraph', null);
+    Session.set('editParagraphContent', null);
   },
 
   'click #cancel-edit-paragraph': function (e) {
     e.preventDefault();
 
     Session.set('editParagraph', null);
+    Session.set('editParagraphContent', null);
   },
 
   'click #smart-editor-toggle': function (e, tmpl) {
