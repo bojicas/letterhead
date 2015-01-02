@@ -26,8 +26,12 @@ Template.ParagraphsEdit.events({
     Session.set('editParagraph', null);
   },
 
-  'click #smart-editor-toggle': function (e) {
+  'click #smart-editor-toggle': function (e, tmpl) {
     e.preventDefault();
+
+    var content = tmpl.find('#editParagraph').value;
+    console.log(content);
+    Session.set('editParagraphContent', content);
 
     if (Session.get('smartEditor')) {
       Session.set('smartEditor', false);
@@ -52,6 +56,10 @@ Template.ParagraphsEdit.helpers({
    *    return Items.find();
    *  }
    */
+  paragraphContent: function () {
+    return Session.get('editParagraphContent') || this.content;
+  },
+
   editorOptions: function () {
     return {
       lineNumbers: true,
@@ -78,6 +86,7 @@ Template.ParagraphsEdit.created = function () {
 };
 
 Template.ParagraphsEdit.rendered = function () {
+  Session.set('editParagraphContent', null);
   if (!Session.get('smartEditor')) {
     $('.edit-paragraph-text-area').autosize();
   } else {

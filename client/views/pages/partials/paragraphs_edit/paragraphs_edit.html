@@ -2,9 +2,9 @@
   <form role="form" id="edit-paragraph-form" class="form-editor">
     <div class="form-group">
       {{#if smartEditor}}
-        {{> CodeMirror id="editParagraph" options=editorOptions code=content}}
+        {{> CodeMirror id="editParagraph" options=editorOptions code=paragraphContent}}
       {{else}}
-        <textarea id="editParagraph" class="form-control edit-paragraph-text-area"  placeholder="Enter paragraph" value={{content}}></textarea>
+        <textarea id="editParagraph" class="form-control edit-paragraph-text-area"  placeholder="Enter paragraph">{{paragraphContent}}</textarea>
       {{/if}}
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
