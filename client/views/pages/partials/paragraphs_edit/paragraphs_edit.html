@@ -4,7 +4,7 @@
       {{#if smartEditor}}
         {{> CodeMirror id="editParagraph" options=editorOptions code=content}}
       {{else}}
-        <textarea id="editParagraph" class="form-control" rows="5" placeholder="Enter paragraph" value={{content}}></textarea>
+        <textarea id="editParagraph" class="form-control edit-paragraph-text-area"  placeholder="Enter paragraph" value={{content}}></textarea>
       {{/if}}
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

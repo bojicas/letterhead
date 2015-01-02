@@ -40,9 +40,15 @@ Template.ParagraphsNew.events({
     if (Session.get('smartEditor')) {
       Session.set('smartEditor', false);
       App.setAlert('Text area editor enabled.', 'info');
+      Meteor.setTimeout(function () {
+        $('.new-paragraph-text-area').autosize();
+      }, 50);
     } else {
       Session.set('smartEditor', true);
       App.setAlert('Smart editor enabled.', 'info');
+      Meteor.setTimeout(function () {
+        $('.new-paragraph-text-area').trigger('autosize.destroy');
+      }, 50);
     }
   }
 });
@@ -80,6 +86,11 @@ Template.ParagraphsNew.created = function () {
 };
 
 Template.ParagraphsNew.rendered = function () {
+  if (!Session.get('smartEditor')) {
+    $('.new-paragraph-text-area').autosize();
+  } else {
+    $('.new-paragraph-text-area').trigger('autosize.destroy');
+  }
 };
 
 Template.ParagraphsNew.destroyed = function () {
