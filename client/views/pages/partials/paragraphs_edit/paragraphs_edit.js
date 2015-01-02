@@ -51,6 +51,7 @@ Template.ParagraphsEdit.helpers({
       lineNumbers: true,
       lineWrapping: true,
       tabSize: 2,
+      tabMode: 'spaces',
       mode: 'htmlmixed'
     };
   },
