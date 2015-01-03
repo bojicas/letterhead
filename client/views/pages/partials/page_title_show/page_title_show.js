@@ -34,7 +34,8 @@ Template.PageTitleShow.events({
   'click #settings-page-action': function (e) {
     e.preventDefault();
 
-    alert('Page Settings');
+    alert('Page Settings for ' + this._id);
+    Session.set('pageSettings', this._id);
   }
 });
 
@@ -57,6 +58,15 @@ Template.PageTitleShow.helpers({
     return this.paragraphs === 0;
   },
 
+  pageSettings: function () {
+    return Session.get('pageSettings') === this._id;
+  },
+
+  titleBorder: function () {
+    if (Session.get('pageSettings') === this._id) {
+      return 'title-border';
+    }
+  }
 });
 
 /*****************************************************************************/

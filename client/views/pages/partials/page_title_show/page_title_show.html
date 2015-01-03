@@ -1,6 +1,6 @@
 <template name="PageTitleShow">
   {{#if currentUser}}
-    <div class="hover-page-title">
+  <div class="hover-page-title {{titleBorder}}">
       <div class="page-title-actions">
         &nbsp;<span style="color: #888;">PAGE TITLE</span>
         &nbsp;<span style="color: #d8d8d8;">|</span>&nbsp;
@@ -36,6 +36,16 @@
         {{title}}
       </h1>
     </div>
+    {{#if pageSettings}}
+    <div class="panel panel-default">
+      <div class="panel-heading">&quot;{{title}}&quot; Settings</div>
+      <div class="panel-body">
+        <div class="panel-body">
+          Basic panel example
+        </div>
+      </div>
+    </div>
+    {{/if}}
   {{else}}
     <h1 id="page-title-show">
       {{title}}
