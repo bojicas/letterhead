@@ -29,6 +29,12 @@ Template.PageTitleShow.events({
         Router.go('pages.index');
       });
     }
+  },
+
+  'click #settings-page-action': function (e) {
+    e.preventDefault();
+
+    alert('Page Settings');
   }
 });
 
