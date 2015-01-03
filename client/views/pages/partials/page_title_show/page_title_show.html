@@ -2,50 +2,55 @@
   {{#if currentUser}}
   <div class="hover-page-title {{titleBorder}}">
       <div class="page-title-actions">
-        &nbsp;<span style="color: #888;">PAGE TITLE</span>
-        &nbsp;<span style="color: #d8d8d8;">|</span>&nbsp;
-        <a href="#" id="page-title-edit-action">
-          <span class="glyphicon glyphicon-pencil"></span>
-        </a>
-        &nbsp;<span style="color: #d8d8d8;">|</span>&nbsp;
-        <a href="#" id="page-title-settings-action" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-          <span class="glyphicon glyphicon-cog"></span>
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="page-title-settings-action">
-          <li role="presentation" class="dropdown-header">General</li>
-          <li role="presentation" id="settings-page-action">
-            <a role="menuitem" tabindex="-1" href="#">
-              <span class="glyphicon glyphicon-wrench"></span>&nbsp;
-              <span>Page Settings</span>
-            </a>
-          </li>
-          {{#if emptyPage}}
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header text-danger">Danger Zone!</li>
-            <li role="presentation" id="delete-page-action">
+        {{#if pageSettings}}
+          &nbsp;<span style="color: #888;">PAGE SETTINGS</span>
+        {{else}}
+          &nbsp;<span style="color: #888;">PAGE TITLE</span>
+          &nbsp;<span style="color: #d8d8d8;">|</span>&nbsp;
+          <a href="#" id="page-title-edit-action">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          &nbsp;<span style="color: #d8d8d8;">|</span>&nbsp;
+          <a href="#" id="page-title-settings-action" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <span class="glyphicon glyphicon-cog"></span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="page-title-settings-action">
+            <li role="presentation" class="dropdown-header">General</li>
+            <li role="presentation" id="settings-page-action">
               <a role="menuitem" tabindex="-1" href="#">
-                <span class="glyphicon glyphicon-trash text-danger"></span>&nbsp;&nbsp;
-                <span class="text-danger">Delete Page</span>
+                <span class="glyphicon glyphicon-wrench"></span>&nbsp;
+                <span>Page Settings</span>
               </a>
             </li>
-          {{/if}}
-        </ul>
+            {{#if emptyPage}}
+              <li role="presentation" class="divider"></li>
+              <li role="presentation" class="dropdown-header text-danger">Danger Zone!</li>
+              <li role="presentation" id="delete-page-action">
+                <a role="menuitem" tabindex="-1" href="#">
+                  <span class="glyphicon glyphicon-trash text-danger"></span>&nbsp;&nbsp;
+                  <span class="text-danger">Delete Page</span>
+                </a>
+              </li>
+            {{/if}}
+          </ul>
+        {{/if}}
       </div>
       <h1 id="page-title-show">
         {{title}}
       </h1>
-    </div>
-    {{#if pageSettings}}
-    <div class="panel panel-default">
-      <div class="panel-heading">&quot;{{title}}&quot; Settings</div>
-      <div class="panel-body">
-        <div class="panel-body">
-          Basic panel example
+      {{#if pageSettings}}
+        <div class="panel panel-default" style="margin-bottom:0px; padding-bottom:0px;">
+          <div class="panel-body">
+            Basic panel example
+          </div>
+          <div class="panel-footer" style="padding: 5px;">
+            <a class="btn btn-default" href="#" role="button">Cancel</a>
+            <span class="pull-right" style="color: #888; padding-top: 8px;">PAGE SETTINGS</span>
+          </div>
         </div>
-      </div>
+      {{/if}}
     </div>
-    {{/if}}
   {{else}}
     <h1 id="page-title-show">
       {{title}}

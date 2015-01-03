@@ -34,7 +34,6 @@ Template.PageTitleShow.events({
   'click #settings-page-action': function (e) {
     e.preventDefault();
 
-    alert('Page Settings for ' + this._id);
     Session.set('pageSettings', this._id);
   }
 });
