@@ -4,7 +4,7 @@ PagesShowController = RouteController.extend({
   },
 
   data: function () {
-    return Pages.findOne({ _id: this.params._id });
+    return Pages.findOne({ $or: [ { _id: this.params._id }, { slug: this.params._id } ] });
   },
 
   action: function () {
