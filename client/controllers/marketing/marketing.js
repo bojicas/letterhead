@@ -6,7 +6,7 @@ MarketingController = RouteController.extend({
   action: function () {
     var indexPage = Pages.findOne({ type: 'INDEX' });
     if (indexPage) {
-      Router.go('pages.show', { _id: indexPage._id });
+      Router.go('pages.show', { _id: indexPage.slug || indexPage._id });
     } else {
       this.render();
     }
