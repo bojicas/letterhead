@@ -12,6 +12,12 @@ Template.PageSettings.events({
     e.preventDefault();
 
     Session.set('pageSettings', null);
+  },
+
+  'submit #new-slug': function (e) {
+    e.preventDefault();
+
+    alert('new slug submitted');
   }
 });
 
