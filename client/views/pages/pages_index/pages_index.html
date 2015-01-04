@@ -1,34 +1,42 @@
 <template name="PagesIndex">
-  <div class="col-xs-12">
-    <ol class="breadcrumb">
-      <li><a href="/">Letterhead</a></li>
-      <li>Pages</li>
-    </ol>
-  </div>
+  <div class="container">
 
-  <div class="col-xs-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <strong>Pages</strong>
-        <a href="{{pathFor 'pages.new'}}" class="pull-right" title="Create new page">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        </a>
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="/">Letterhead</a></li>
+          <li>Pages</li>
+        </ol>
       </div>
-
-      <ul class="list-group">
-        {{#each pages}}
-          <li class="list-group-item lh-page-list">
-            {{> PagesActions}}
-            <a href="{{pathFor 'pages.show'}}" class="lead">{{title}}</a><br />
-            <small>{{pluralize paragraphs 'paragraph'}}</small>
-          </li>
-        {{else}}
-        <li class="list-group-item">
-          No pages yet. Click/tap <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          on top-right corner to create one.
-        </li>
-        {{/each}}
-      </ul>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>Pages</strong>
+            <a href="{{pathFor 'pages.new'}}" class="pull-right" title="Create new page">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <ul class="list-group">
+            {{#each pages}}
+              <li class="list-group-item lh-page-list">
+                {{> PagesActions}}
+                <a href="{{pathFor 'pages.show'}}" class="lead">{{title}}</a><br />
+                <small>{{pluralize paragraphs 'paragraph'}}</small>
+              </li>
+            {{else}}
+            <li class="list-group-item">
+              No pages yet. Click/tap <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              on top-right corner to create one.
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
