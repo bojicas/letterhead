@@ -14,10 +14,15 @@ Template.PageSettings.events({
     Session.set('pageSettings', null);
   },
 
-  'submit #new-slug': function (e) {
+  'submit #new-slug': function (e, tmpl) {
     e.preventDefault();
+    
+    var slug = tmpl.find('#pageSlug').value;
 
-    alert('new slug submitted');
+    Pages.update({ _id: this._id }, {
+      $set: { slug: slug }
+    });
+    App.setAlert('Page slug created.', 'success');
   }
 });
 
