@@ -31,7 +31,7 @@ Template.PageSettings.events({
       App.setAlert('The page slug is removed.', 'success');
     }
 
-    Session.set('pageSlug', null);
+    Session.set('pageSlug', undefined);
   },
 
   'click #editSlug': function (e, tmpl) {
@@ -50,7 +50,7 @@ Template.PageSettings.helpers({
    *  }
    */
   disabledInput: function () {
-    if (!this.slug || Session.get('pageSlug') === this.slug) {
+    if (Session.get('pageSlug') === this.slug) {
       return '';
     } else {
       return 'disabled';
@@ -65,7 +65,7 @@ Template.PageSettings.created = function () {
 };
 
 Template.PageSettings.rendered = function () {
-  Session.set('pageSlug', null);
+  Session.set('pageSlug', undefined);
 };
 
 Template.PageSettings.destroyed = function () {
