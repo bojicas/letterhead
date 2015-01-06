@@ -16,7 +16,7 @@ Template.PageSettings.events({
 
   'submit #page-slug': function (e, tmpl) {
     e.preventDefault();
-    
+
     var slug = tmpl.find('#pageSlug').value;
 
     if (slug.length > 0) {
