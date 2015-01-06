@@ -14,7 +14,7 @@ Template.PageSettings.events({
     Session.set('pageSettings', null);
   },
 
-  'submit #new-slug': function (e, tmpl) {
+  'submit #page-slug': function (e, tmpl) {
     e.preventDefault();
     
     var slug = tmpl.find('#pageSlug').value;
@@ -22,7 +22,7 @@ Template.PageSettings.events({
     Pages.update({ _id: this._id }, {
       $set: { slug: slug }
     });
-    App.setAlert('Page slug created.', 'success');
+    App.setAlert('Added a new page slug.', 'success');
   }
 });
 
