@@ -24,7 +24,8 @@ Template.PagesShow.helpers({
    */
 
   paragraphs: function () {
-    return Paragraphs.find({}, { sort: { rank: 1 } });
+    var paragraphsOrder = this.paragraphsOrder || 1;
+    return Paragraphs.find({}, { sort: { rank: paragraphsOrder } });
   },
 
   editTitle: function () {
