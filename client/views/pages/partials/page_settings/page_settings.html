@@ -5,12 +5,18 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Slug</span>
-              <input type="text" id="pageSlug" class="form-control" placeholder="Page slug ..." value={{slug}}>
+              <span class="input-group-addon">Slug</span>
+              <input type="text" id="pageSlug" class="form-control" placeholder="Page slug ..." value={{slug}} {{disabledInput}}>
               <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit" value="Submit">
-                  Submit
-                </button>
+                {{#if disabledInput}}
+                  <a href="#" class="btn btn-primary" id="editSlug" value="Edit">
+                    Edit
+                  </a>
+                {{else}}
+                  <button class="btn btn-primary" type="submit" value="Submit">
+                    Submit
+                  </button>
+                {{/if}}
               </span>
             </div>
           </div>

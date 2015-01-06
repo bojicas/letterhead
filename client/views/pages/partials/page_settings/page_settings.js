@@ -23,13 +23,22 @@ Template.PageSettings.events({
       Pages.update({ _id: this._id }, {
         $set: { slug: slug }
       });
-      App.setAlert('Added a new page slug.', 'success');
+      App.setAlert('The page slug is saved.', 'success');
     } else {
       Pages.update({ _id: this._id }, {
         $unset: { slug: '' }
       });
-      App.setAlert('Removed page slug.', 'success');
+      App.setAlert('The page slug is removed.', 'success');
     }
+
+    Session.set('pageSlug', null);
+  },
+
+  'click #editSlug': function (e, tmpl) {
+    e.preventDefault();
+
+    App.setAlert('You can now edit the page slug.', 'info');
+    Session.set('pageSlug', this.slug);
   }
 });
 
@@ -40,6 +49,13 @@ Template.PageSettings.helpers({
    *    return Items.find();
    *  }
    */
+  disabledInput: function () {
+    if (!this.slug || Session.get('pageSlug') === this.slug) {
+      return '';
+    } else {
+      return 'disabled';
+    }
+  }
 });
 
 /*****************************************************************************/
@@ -49,6 +65,7 @@ Template.PageSettings.created = function () {
 };
 
 Template.PageSettings.rendered = function () {
+  Session.set('pageSlug', null);
 };
 
 Template.PageSettings.destroyed = function () {
