@@ -19,10 +19,17 @@ Template.PageSettings.events({
     
     var slug = tmpl.find('#pageSlug').value;
 
-    Pages.update({ _id: this._id }, {
-      $set: { slug: slug }
-    });
-    App.setAlert('Added a new page slug.', 'success');
+    if (slug.length > 0) {
+      Pages.update({ _id: this._id }, {
+        $set: { slug: slug }
+      });
+      App.setAlert('Added a new page slug.', 'success');
+    } else {
+      Pages.update({ _id: this._id }, {
+        $unset: { slug: '' }
+      });
+      App.setAlert('Removed page slug.', 'success');
+    }
   }
 });
 
