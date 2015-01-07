@@ -23,16 +23,22 @@
         </div>
       </form>
 
-      <form id="page-checks">
+      <br/>
+
+      <div class="well well-sm col-sm-12">
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="paragraphsOrder" {{checkedParaphOrder}}> Live Blogging (reverse paragraphs order)
+            <input type="checkbox" id="paragraphsOrder" {{checkedParaphsOrder}}> Live Blogging (reverse paragraphs order)
           </label>
         </div>
-      </form>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="disqusComments" {{disqusEnabled}}> Enable Disqus Comments 
+          </label>
+        </div>
+      </div>
 
-    </div>
-    <div class="panel-footer" style="padding: 5px;">
+      <hr/>
       <a class="btn btn-default" id="cancel-page-settings" href="#" role="button">Cancel</a>
     </div>
   </div>

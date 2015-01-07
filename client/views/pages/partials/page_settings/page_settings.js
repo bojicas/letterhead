@@ -39,6 +39,24 @@ Template.PageSettings.events({
 
     App.setAlert('You can now edit the page slug.', 'info');
     Session.set('pageSlug', this.slug);
+  },
+
+  'change #paragraphsOrder': function (e) {
+    if (e.target.checked) {
+      Pages.update({ _id: this._id }, {
+        $set: { paragraphsOrder: -1 }
+      });
+    } else {
+      Pages.update({ _id: this._id }, {
+        $unset: { paragraphsOrder: '' }
+      });
+    }
+  },
+
+  'change #disqusComments': function (e) {
+    Pages.update({ _id: this._id }, {
+      $set: { disqus: e.target.checked }
+    });
   }
 });
 
@@ -54,6 +72,22 @@ Template.PageSettings.helpers({
       return '';
     } else {
       return 'disabled';
+    }
+  },
+
+  checkedParagraphsOrder: function () {
+    if (this.paragraphsOrder === -1) {
+      return 'checked';
+    } else {
+      return '';
+    }
+  },
+
+  disqusEnabled: function () {
+    if (this.disqus) {
+      return 'checked';
+    } else {
+      return '';
     }
   }
 });
