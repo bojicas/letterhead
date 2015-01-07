@@ -12,3 +12,8 @@ Roadmap
 -------
 
 * [Letterhead Development Board](https://trello.com/b/cBSUihVq/letterhead-development)
+
+Note
+----
+
+* After first install, default username is *admin* and password is *admin*. You can log in and change it afterwards.
