@@ -10,7 +10,7 @@ Package.onUse(function(api) {
 
   api.use('mongo');
   api.use([
-    'twbs:bootstrap',
+    'twbs:bootstrap@3.3.1_2',
     'templating'
   ], 'client');
 
