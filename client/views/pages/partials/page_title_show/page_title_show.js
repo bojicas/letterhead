@@ -22,10 +22,10 @@ Template.PageTitleShow.events({
     if (deletePage) {
       Meteor.call('pagesDelete', this, function (error, result) {
         if (error) {
-          return App.setAlert(error.reason, 'danger');
+          return Alerts.set(error.reason, 'danger');
         } 
 
-        App.setAlert('Page deleted.', 'success');
+        Alerts.set('Page deleted.', 'success');
         Router.go('pages.index');
       });
     }

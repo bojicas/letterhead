@@ -23,12 +23,12 @@ Template.PageSettings.events({
       Pages.update({ _id: this._id }, {
         $set: { slug: slug }
       });
-      App.setAlert('The page slug is saved.', 'success');
+      Alerts.set('The page slug is saved.', 'success');
     } else {
       Pages.update({ _id: this._id }, {
         $unset: { slug: '' }
       });
-      App.setAlert('The page slug is removed.', 'success');
+      Alerts.set('The page slug is removed.', 'success');
     }
 
     Session.set('pageSlug', undefined);
@@ -37,7 +37,7 @@ Template.PageSettings.events({
   'click #editSlug': function (e, tmpl) {
     e.preventDefault();
 
-    App.setAlert('You can now edit the page slug.', 'info');
+    Alerts.set('You can now edit the page slug.', 'info');
     Session.set('pageSlug', this.slug);
   },
 
@@ -46,12 +46,12 @@ Template.PageSettings.events({
       Pages.update({ _id: this._id }, {
         $set: { paragraphsOrder: -1 }
       });
-      App.setAlert('Live blogging enabled!', 'success');
+      Alerts.set('Live blogging enabled!', 'success');
     } else {
       Pages.update({ _id: this._id }, {
         $unset: { paragraphsOrder: '' }
       });
-      App.setAlert('Live blogging disabled!', 'success');
+      Alerts.set('Live blogging disabled!', 'success');
     }
   },
 
@@ -60,12 +60,12 @@ Template.PageSettings.events({
       Pages.update({ _id: this._id }, {
         $set: { disqus: e.target.checked }
       });
-      App.setAlert('Disqus comments enabled!', 'success');
+      Alerts.set('Disqus comments enabled!', 'success');
     } else {
       Pages.update({ _id: this._id }, {
         $unset: { disqus: '' }
       });
-      App.setAlert('Disqus comments disabled!', 'success');
+      Alerts.set('Disqus comments disabled!', 'success');
     }
   }
 });

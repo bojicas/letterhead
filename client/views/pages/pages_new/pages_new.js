@@ -16,7 +16,7 @@ Template.PagesNew.events({
       title: title,
       paragraphs: 0
     });
-    App.setAlert('New page created.', 'success');
+    Alerts.set('New page created.', 'success');
     Router.go('pages.show', { _id: pageId});
   }
 });

@@ -1,14 +1,7 @@
 /*****************************************************************************/
 /* Client App Namespace  */
 /*****************************************************************************/
-_.extend(App, {
-  setAlert: function (message, type) {
-    Alerts.insert({
-      message: message,
-      type: type
-    });
-  }
-});
+_.extend(App, {});
 
 App.helpers = {
   pluralize: function (n, thing) {

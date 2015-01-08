@@ -20,7 +20,7 @@ Template.PagesActions.events({
     Pages.update({ _id: this._id }, {
       $set: { type: 'INDEX' }
     });
-    App.setAlert('Index page changed.', 'success');
+    Alerts.set('Index page changed.', 'success');
   }
 });
 
