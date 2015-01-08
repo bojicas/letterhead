@@ -7,16 +7,19 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.2.1');
+
   api.use('mongo');
   api.use([
     'twbs:bootstrap',
     'templating'
   ], 'client');
+
   api.addFiles([
     'bojicas:bootstrap-alerts.css',
     'bojicas:bootstrap-alerts.html',
     'bojicas:bootstrap-alerts.js'
   ], 'client');
+
   if (api.export) {
     api.export('Alerts');
   }
