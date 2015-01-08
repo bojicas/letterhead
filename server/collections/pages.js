@@ -6,28 +6,14 @@
  */
 Pages.allow({
   insert: function (userId, doc) {
-    return true;
+    return !!userId;
   },
 
   update: function (userId, doc, fieldNames, modifier) {
-    return true;
+    return !!userId;
   },
 
   remove: function (userId, doc) {
     return false;
-  }
-});
-
-Pages.deny({
-  insert: function (userId, doc) {
-    return false;
-  },
-
-  update: function (userId, doc, fieldNames, modifier) {
-    return false;
-  },
-
-  remove: function (userId, doc) {
-    return true;
   }
 });
