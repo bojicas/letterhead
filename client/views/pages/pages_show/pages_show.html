@@ -19,6 +19,10 @@
       {{/if}}
     </header>
 
+    {{#if liveBlogging}}
+      {{> ParagraphsNewLink}}
+    {{/if}}
+
     {{#each paragraphs}}
       <div>
         {{#if editParagraph}}
@@ -38,16 +42,9 @@
       </div>
     {{/each}}
 
-    {{#if newParagraph}}
-      {{> ParagraphsNew}}
-    {{else}}
-      {{#if currentUser}}
-        <a href="#" id="new-paragraph-action">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          Add paragraph
-        </a>
-      {{/if}}
-    {{/if}}
+    {{#unless liveBlogging}}
+      {{> ParagraphsNewLink}}
+    {{/unless}}
   </article>
 
   {{#if showComments}}

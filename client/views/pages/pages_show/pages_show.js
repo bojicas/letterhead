@@ -36,14 +36,6 @@ Template.PagesShow.helpers({
     }
   },
 
-  newParagraph: function () {
-    if (Meteor.user() && Session.get('newParagraph') === this._id) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-
   editParagraph: function () {
     if (Meteor.user() && Session.get('editParagraph') === this._id) {
       return true;
@@ -57,6 +49,16 @@ Template.PagesShow.helpers({
     var page = Pages.findOne();
 
     if (settings.disqusShortname && page.disqus) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  liveBlogging: function () {
+    var page = Pages.findOne();
+
+    if (page.paragraphsOrder === -1) {
       return true;
     } else {
       return false;
