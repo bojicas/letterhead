@@ -7,11 +7,6 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
-/*
- *  Example:
- *  Router.route('/', {name: 'home'});
-*/
-
 Router.route('/', {
   name: 'marketing'
 });
