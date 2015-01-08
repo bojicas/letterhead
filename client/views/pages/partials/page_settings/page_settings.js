@@ -46,17 +46,27 @@ Template.PageSettings.events({
       Pages.update({ _id: this._id }, {
         $set: { paragraphsOrder: -1 }
       });
+      App.setAlert('Live blogging enabled!', 'success');
     } else {
       Pages.update({ _id: this._id }, {
         $unset: { paragraphsOrder: '' }
       });
+      App.setAlert('Live blogging disabled!', 'success');
     }
   },
 
   'change #disqusComments': function (e) {
-    Pages.update({ _id: this._id }, {
-      $set: { disqus: e.target.checked }
-    });
+    if (e.target.checked) {
+      Pages.update({ _id: this._id }, {
+        $set: { disqus: e.target.checked }
+      });
+      App.setAlert('Disqus comments enabled!', 'success');
+    } else {
+      Pages.update({ _id: this._id }, {
+        $unset: { disqus: '' }
+      });
+      App.setAlert('Disqus comments disabled!', 'success');
+    }
   }
 });
 
