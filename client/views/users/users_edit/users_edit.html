@@ -1,3 +1,21 @@
 <template name="UsersEdit">
-  client/views/users/users_edit/users_edit.html
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="/">Letterhead</a></li>
+          <li><a href="{{pathFor 'users.show' _id=currentUser._id}}">User Profile</a></li>
+          <li>Edit {{currentUser.username}}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        Edit user form goes here
+      </div>
+    </div>
+  </div>
 </template>
