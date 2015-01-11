@@ -31,4 +31,8 @@ Router.route('/users/:_id', {
   name: 'users.show'
 });
 
+Router.route('/users/:_id/edit', {
+  name:'users.edit'
+});
+
 Router.onBeforeAction('dataNotFound');
