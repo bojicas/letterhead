@@ -1,0 +1,16 @@
+<template name="UsersShow">
+  <div class="container">
+    <div class="col-xs-12">
+      <h1>User Profile</h1>
+      <ul>
+        <li><strong>Username:</strong> {{currentUser.username}}</li>
+        <li><strong>Emails:</strong></li>
+        <ul>
+          {{#each currentUser.emails}}
+            <li>{{this.address}}</li>
+          {{/each}}
+        </ul>
+      </ul>
+    </div>
+  </div>
+</template>

@@ -27,4 +27,8 @@ Router.route('/settings', {
   name: 'settings.index'
 });
 
+Router.route('/users/:_id', {
+  name: 'users.show'
+});
+
 Router.onBeforeAction('dataNotFound');
