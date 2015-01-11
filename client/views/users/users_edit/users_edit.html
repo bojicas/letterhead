@@ -14,7 +14,13 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        Edit user form goes here
+        <form>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" value="{{currentUser.username}}" />
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
       </div>
     </div>
   </div>
