@@ -1,16 +1,29 @@
 <template name="UsersShow">
   <div class="container">
-    <div class="col-xs-12">
-      <h1>User Profile</h1>
-      <ul>
-        <li><strong>Username:</strong> {{currentUser.username}}</li>
-        <li><strong>Emails:</strong></li>
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="/">Letterhead</a></li>
+          <li>User Profile</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>User Profile</h1>
         <ul>
-          {{#each currentUser.emails}}
-            <li>{{this.address}}</li>
-          {{/each}}
+          <li><strong>Username:</strong> {{currentUser.username}}</li>
+          <li><strong>Emails:</strong></li>
+          <ul>
+            {{#each currentUser.emails}}
+              <li>{{this.address}}</li>
+            {{/each}}
+          </ul>
         </ul>
-      </ul>
+      </div>
     </div>
   </div>
 </template>
