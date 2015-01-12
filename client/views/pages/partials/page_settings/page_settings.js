@@ -34,6 +34,12 @@ Template.PageSettings.events({
     Session.set('pageSlug', undefined);
   },
 
+  'submit #published-on': function (e) {
+    e.preventDefault();
+
+    Alerts.set('DATE/TIME IS CHANGED', 'success');
+  },
+
   'click #editSlug': function (e, tmpl) {
     e.preventDefault();
 
@@ -68,6 +74,7 @@ Template.PageSettings.events({
       Alerts.set('Disqus comments disabled!', 'success');
     }
   }
+
 });
 
 Template.PageSettings.helpers({
@@ -77,8 +84,16 @@ Template.PageSettings.helpers({
    *    return Items.find();
    *  }
    */
-  disabledInput: function () {
+  disabledSlugInput: function () {
     if (Session.get('pageSlug') === this.slug) {
+      return '';
+    } else {
+      return 'disabled';
+    }
+  },
+
+  disabledPublishedInput: function () {
+    if (Session.get('pagePublishedOn') === this.publishedOn) {
       return '';
     } else {
       return 'disabled';
@@ -110,6 +125,7 @@ Template.PageSettings.created = function () {
 
 Template.PageSettings.rendered = function () {
   Session.set('pageSlug', undefined);
+  $('#datetimepicker').datetimepicker();
 };
 
 Template.PageSettings.destroyed = function () {
