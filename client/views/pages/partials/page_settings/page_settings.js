@@ -28,10 +28,12 @@ Template.PageSettings.events({
     Session.set('pageSlug', undefined);
   },
 
-  'submit #published-on': function (e) {
+  'submit #published-on': function (e, tmpl) {
     e.preventDefault();
 
-    Alerts.set('DATE/TIME IS CHANGED', 'success');
+    var publishedOn = tmpl.find('#publishedOn').value;
+
+    Alerts.set('DATE/TIME IS CHANGED' + publishedOn, 'success');
   },
 
   'click #editSlug': function (e, tmpl) {
