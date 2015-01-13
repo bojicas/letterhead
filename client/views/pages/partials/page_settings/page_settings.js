@@ -33,6 +33,10 @@ Template.PageSettings.events({
 
     var publishedOn = tmpl.find('#publishedOn').value;
 
+    Pages.update({ _id: this._id }, {
+      $set: { publishedOn: new Date(publishedOn) }
+    });
+
     Alerts.set('DATE/TIME IS CHANGED' + publishedOn, 'success');
   },
 
@@ -103,6 +107,14 @@ Template.PageSettings.helpers({
       return 'checked';
     } else {
       return '';
+    }
+  },
+
+  publishedOnFormatted: function () {
+    if (this.publishedOn) {
+      return moment(this.publishedOn).format('LLLL');
+    } else {
+      return null;
     }
   }
 });
