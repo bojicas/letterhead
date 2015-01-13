@@ -17,4 +17,3 @@ iron:router
 bojicas:bootstrap-alerts
 tsega:bootstrap3-datetimepicker
 momentjs:moment
-meteorhacks:fast-render
