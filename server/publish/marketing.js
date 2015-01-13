@@ -1,7 +1,7 @@
 /*****************************************************************************/
-/* Settings Publish Functions
+/* Marketing Publish Functions
 /*****************************************************************************/
 
-Meteor.publish(null, function () {
-  return Settings.find();
+Meteor.publish('marketing', function () {
+  return Pages.find({ type: 'INDEX' });
 });

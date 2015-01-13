@@ -1,5 +1,7 @@
 MarketingController = RouteController.extend({
-  waitOn: function () {},
+  waitOn: function () {
+    return Meteor.subscribe('marketing');
+  },
 
   action: function () {
     var indexPage = Pages.findOne();
