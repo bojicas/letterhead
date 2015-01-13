@@ -33,11 +33,19 @@ Template.PageSettings.events({
 
     var publishedOn = tmpl.find('#publishedOn').value;
 
-    Pages.update({ _id: this._id }, {
-      $set: { publishedOn: new Date(publishedOn) }
-    });
+    if (publishedOn.length > 0) {
+      Pages.update({ _id: this._id }, {
+        $set: { publishedOn: new Date(publishedOn) }
+      });
+      Alerts.set('Published on date is saved.', 'success');
+    } else {
+      Pages.update({ _id: this._id }, {
+        $unset: { publishedOn: '' }
+      });
+      Alerts.set('Published on date is removed.', 'success');
+    }
 
-    Alerts.set('DATE/TIME IS CHANGED' + publishedOn, 'success');
+    Session.set('pagePublishedOn', undefined);
   },
 
   'click #editSlug': function (e, tmpl) {
@@ -45,6 +53,21 @@ Template.PageSettings.events({
 
     Alerts.set('You can now edit the page slug.', 'info');
     Session.set('pageSlug', this.slug);
+  },
+
+  'click #editPublished': function (e, tmpl) {
+    e.preventDefault();
+
+    Alerts.set('You can now edit the published on date.', 'info');
+    Session.set('pagePublishedOn', this.publishedOn);
+  },
+
+  'click #calendar-button': function (e, tmpl) {
+    publishedOn = new Date(this.publishedOn);
+    if (!(Session.get('pagePublishedOn') && Session.get('pagePublishedOn').toUTCString() === publishedOn.toUTCString())) {
+      e.preventDefault();
+    }
+    Alerts.set('Cannot change!');
   },
 
   'change #paragraphsOrder': function (e) {
@@ -87,10 +110,26 @@ Template.PageSettings.helpers({
   },
 
   disabledPublishedInput: function () {
-    if (Session.get('pagePublishedOn') === this.publishedOn) {
+    if (!this.publishedOn) {
+      return '';
+    }
+    publishedOn = new Date(this.publishedOn);
+    if (Session.get('pagePublishedOn') && Session.get('pagePublishedOn').toUTCString() === publishedOn.toUTCString()) {
       return '';
     } else {
-      return 'disabled';
+      return 'readonly';
+    }
+  },
+
+  disabledPublishedButton: function () {
+    if (!this.publishedOn) {
+      return 'block';
+    }
+    publishedOn = new Date(this.publishedOn);
+    if (Session.get('pagePublishedOn') && Session.get('pagePublishedOn').toUTCString() === publishedOn.toUTCString()) {
+      return 'block';
+    } else {
+      return 'none';
     }
   },
 
@@ -127,6 +166,7 @@ Template.PageSettings.created = function () {
 
 Template.PageSettings.rendered = function () {
   Session.set('pageSlug', undefined);
+  Session.set('pagePublishedOn', undefined);
   $('#datetimepicker').datetimepicker();
 };
 

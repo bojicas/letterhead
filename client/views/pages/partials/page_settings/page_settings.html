@@ -31,10 +31,15 @@
           <span class="input-group-addon datepickerbutton">
             <span class="glyphicon glyphicon-calendar"></span>
           </span>
-          <input type='text' id="publishedOn" class="form-control" data-date-format="LLLL" value="{{publishedOnFormatted}}" {{disabledPublishedInput}}/>
+          {{#if disabledPublishedInput}}
+            <input type='text' id="publishedOn" class="form-control" data-date-format="LLLL" value="{{publishedOnFormatted}}" readonly style="margin-left: -40px;"/>
+          {{else}}
+            <input type='text' id="publishedOn" class="form-control" data-date-format="LLLL" value="{{publishedOnFormatted}}" />
+          {{/if}}
+          <input type='hidden' class="form-control"/>
           <span class="input-group-btn">
             {{#if disabledPublishedInput}}
-              <a href="#" class="btn btn-primary" id="editPublished" value="Edit">
+              <a href="#" class="btn btn-primary" id="editPublished" value="Edit" style="margin-left: -40px;">
                 Edit
               </a>
             {{else}}
