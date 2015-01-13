@@ -1,13 +1,7 @@
 /*****************************************************************************/
-/* PageSettings: Event Handlers and Helpersss .js*/
+/* PageSettings: Event Handlers and Helpers .js*/
 /*****************************************************************************/
 Template.PageSettings.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
   'click #cancel-page-settings': function (e) {
     e.preventDefault();
 
@@ -78,12 +72,6 @@ Template.PageSettings.events({
 });
 
 Template.PageSettings.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
   disabledSlugInput: function () {
     if (Session.get('pageSlug') === this.slug) {
       return '';
