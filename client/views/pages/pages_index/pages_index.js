@@ -19,6 +19,14 @@ Template.PagesIndex.helpers({
    */
   pages: function () {
     return Pages.find();
+  },
+
+  publishedOnFormatted: function () {
+    if (this.publishedOn) {
+      return moment(this.publishedOn).format('LLLL');
+    } else {
+      return null;
+    }
   }
 });
 

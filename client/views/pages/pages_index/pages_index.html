@@ -25,6 +25,9 @@
               <li class="list-group-item lh-page-list">
                 {{> PagesActions}}
                 <a href="{{pathFor 'pages.show'}}" class="lead">{{title}}</a><br />
+                {{#if publishedOnFormatted}}
+                <small>Published {{publishedOnFormatted}}, </small>
+                {{/if}}
                 <small>{{pluralize paragraphs 'paragraph'}}</small>
               </li>
             {{else}}
