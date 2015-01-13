@@ -105,7 +105,7 @@ Template.PageSettings.helpers({
     if (Session.get('pageSlug') === this.slug) {
       return '';
     } else {
-      return 'disabled';
+      return 'readonly';
     }
   },
 
