@@ -66,6 +66,16 @@ Template.ParagraphActions.helpers({
    *    return Items.find();
    *  }
    */
+  liveBlogging: function () {
+    var page = Pages.findOne();
+
+    if (page.paragraphsOrder === -1) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
   showUpAction: function () {
     return this.rank > 1;
   },
