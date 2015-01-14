@@ -23,7 +23,7 @@ Template.PagesIndex.helpers({
 
   publishedOnFormatted: function () {
     if (this.publishedOn) {
-      return moment(this.publishedOn).format('LLLL');
+      return moment(this.publishedOn).format('llll');
     } else {
       return null;
     }
