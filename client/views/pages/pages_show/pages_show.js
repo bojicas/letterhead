@@ -90,7 +90,10 @@ Template.PagesShow.rendered = function () {
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', settings.googleTrackingId, 'auto');
-    ga('send', 'pageview');
+    ga('send', 'pageview', {
+      'page': '/pages/' + (this.slug || this._id),
+      'title': this.title
+    });
   }
 
 };
