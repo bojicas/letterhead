@@ -49,11 +49,8 @@ var requireLogin = function () {
 
 Router.onBeforeAction('dataNotFound');
 Router.onBeforeAction(requireLogin, {
-  only: [
-    'pages.index',
-    'pages.new',
-    'settings.index',
-    'users.show',
-    'users.edit'
+  except: [
+    'marketing',
+    'pages.show'
   ]
 });
