@@ -82,7 +82,13 @@ Template.PagesShow.rendered = function () {
     Session.set('smartEditor', true);
   }
 
+  // set up Google Analytics for pages
   var settings = Settings.findOne();
+  var controller = Iron.controller();
+
+  console.dir(controller);
+  console.log(controller.url);
+
   if (settings.googleTrackingId) {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -91,8 +97,7 @@ Template.PagesShow.rendered = function () {
 
     ga('create', settings.googleTrackingId, 'auto');
     ga('send', 'pageview', {
-      'page': '/pages/' + (this.slug || this._id),
-      'title': this.title
+      'page': controller.url
     });
   }
 
