@@ -35,4 +35,17 @@ Router.route('/users/:_id/edit', {
   name:'users.edit'
 });
 
+var requireLogin = function () {
+  if (!Meteor.user()) {
+    if (Meteor.loggingIn()) {
+      this.render(this.loadingTemplate);
+    } else {
+      this.render('AccessDenied');
+    }
+  } else {
+    this.next();
+  }
+};
+
 Router.onBeforeAction('dataNotFound');
+Router.onBeforeAction(requireLogin, { only: 'pages.index' });
