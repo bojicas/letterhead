@@ -12,7 +12,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-3">
+      <div class="col-xs-12 col-sm-4 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">User Settings</h3>
@@ -30,12 +30,14 @@
         </div>
       </div>
 
-      {{#if activeSection 'username'}}
-        {{> UsernameEdit}}
-      {{/if}}
-      {{#if activeSection 'profile'}}
-        {{> UserProfileEdit}}
-      {{/if}}
+      <div class="col-xs-12 col-sm-8 col-md-9">
+        {{#if activeSection 'username'}}
+          {{> UsernameEdit}}
+        {{/if}}
+        {{#if activeSection 'profile'}}
+          {{> UserProfileEdit}}
+        {{/if}}
+      </div>
     </div>
   </div>
 </template>

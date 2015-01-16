@@ -1,27 +1,25 @@
 <template name="UsernameEdit">
-  <div class="col-xs-12 col-sm-9">
-    <div class="panel panel-default">
+  <div class="panel panel-default">
 
-      <div class="panel-heading">
-        <h3 class="panel-title">Edit Username</h3>
-      </div>
-
-      <div class="panel-body">
-        <form id="username-edit">
-          <div class="input-group">
-            <span class="input-group-addon">Username</span>
-            <input type="text" class="form-control" id="username" placeholder="Enter username" value="{{currentUser.username}}" {{disabledUsernameInput}} />
-            <span class="input-group-btn">
-              {{#if disabledUsernameInput}}
-                <a href="#" class="btn btn-primary" id="editUsername" value="Edit">Edit</a>
-              {{else}}
-                <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
-              {{/if}}
-            </span>
-          </div>
-        </form>
-      </div>
-
+    <div class="panel-heading">
+      <h3 class="panel-title">Edit Username</h3>
     </div>
+
+    <div class="panel-body">
+      <form id="username-edit">
+        <div class="input-group">
+          <span class="input-group-addon">Username</span>
+          <input type="text" class="form-control" id="username" placeholder="Enter username" value="{{currentUser.username}}" {{disabledUsernameInput}} />
+          <span class="input-group-btn">
+            {{#if disabledUsernameInput}}
+              <a href="#" class="btn btn-primary" id="editUsername" value="Edit">Edit</a>
+            {{else}}
+              <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
+            {{/if}}
+          </span>
+        </div>
+      </form>
+    </div>
+
   </div>
 </template>

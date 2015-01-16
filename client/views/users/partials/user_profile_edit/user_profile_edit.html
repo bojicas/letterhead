@@ -1,29 +1,27 @@
 <template name="UserProfileEdit">
-  <div class="col-xs-12 col-sm-9">
-    <div class="panel panel-default">
+  <div class="panel panel-default">
 
-      <div class="panel-heading">
-        <h3 class="panel-title">Edit Profile</h3>
-      </div>
-
-      <div class="panel-body">
-        <form id="profile-edit">
-
-          <div class="form-group">
-            <label for="displayName">Display name</label>
-            <input type="text" class="form-control" id="displayName" placeholder="Enter full name or nickname" value={{currentUser.profile.displayName}} />
-          </div>
-
-          <div class="form-group">
-            <label for="bio">Short Bio</label>
-            <textarea id="bio" class="form-control" rows="3" placeholder="Few words about you">{{currentUser.profile.bio}}</textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Submit</button>
-
-        </form>
-      </div>
-
+    <div class="panel-heading">
+      <h3 class="panel-title">Edit Profile</h3>
     </div>
+
+    <div class="panel-body">
+      <form id="profile-edit">
+
+        <div class="form-group">
+          <label for="displayName">Display name</label>
+          <input type="text" class="form-control" id="displayName" placeholder="Enter full name or nickname" value={{currentUser.profile.displayName}} />
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Short Bio</label>
+          <textarea id="bio" class="form-control" rows="3" placeholder="Few words about you">{{currentUser.profile.bio}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+    </div>
+
   </div>
 </template>
