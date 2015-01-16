@@ -8,6 +8,11 @@ Template.UserProfileEdit.events({
    *
    *  }
    */
+  'submit #profile-edit': function (e, tmpl) {
+    e.preventDefault();
+
+    Alerts.set('Saving profile', 'success');
+  }
 });
 
 Template.UserProfileEdit.helpers({
