@@ -22,6 +22,14 @@ Template.PagesShow.events({
 });
 
 Template.PagesShow.helpers({
+  newParagraph: function () {
+    if (Meteor.user() && Session.get('newParagraph') === this._id) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
   hideAdminMenu: function () {
     return Session.get('hideAdminMenu');
   },

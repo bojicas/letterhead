@@ -9,11 +9,14 @@
       {{/if}}
     </header>
 
-    {{#unless hideAdminMenu}}
-      {{#if liveBlogging}}
+    {{#if liveBlogging}}
+      {{#unless hideAdminMenu}}
         {{> ParagraphsNewLink}}
+      {{/unless}}
+      {{#if newParagraph}}
+        {{> ParagraphsNew}}
       {{/if}}
-    {{/unless}}
+    {{/if}}
 
     {{#each paragraphs}}
       <div>
@@ -34,10 +37,13 @@
       </div>
     {{/each}}
 
-    {{#unless hideAdminMenu}}
-      {{#unless liveBlogging}}
+    {{#unless liveBlogging}}
+      {{#unless hideAdminMenu}}
         {{> ParagraphsNewLink}}
       {{/unless}}
+      {{#if newParagraph}}
+        {{> ParagraphsNew}}
+      {{/if}}
     {{/unless}}
   </article>
 
@@ -46,11 +52,12 @@
   {{/if}}
 
   {{#if currentUser}}
-    <div id="hide-admin-menu" class="lh-popup">
+    <div class="lh-popup">
       {{#if hideAdminMenu}}
-        <a href="#" class="text-danger" title="Normal Screen / Show admin menu"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+        {{> ParagraphsNewLink}}
+        <a href="#" id="hide-admin-menu" class="text-danger" title="Normal Screen / Show admin menu"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
       {{else}}
-        <a href="#" class="text-primary" title="Full Screen / Hide admin menu"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
+        <a href="#" id="hide-admin-menu" class="text-primary" title="Full Screen / Hide admin menu"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
       {{/if}}
     </div>
   {{/if}}

@@ -26,7 +26,6 @@ Template.MasterLayout.created = function () {
 };
 
 Template.MasterLayout.rendered = function () {
-  Session.set('hideAdminMenu', undefined);
 };
 
 Template.MasterLayout.destroyed = function () {

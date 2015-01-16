@@ -1,14 +1,18 @@
 <template name="ParagraphsNewLink">
-  {{#if newParagraph}}
-    {{> ParagraphsNew}}
-  {{else}}
+  {{#unless newParagraph}}
     {{#if currentUser}}
       <p>
-        <a href="#" id="new-paragraph-action">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          Add paragraph
-        </a>
+        {{#if hideAdminMenu}}
+          <a href="#" id="new-paragraph-action">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </a>
+        {{else}}
+          <a href="#" id="new-paragraph-action">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Add paragraph
+          </a>
+        {{/if}}
       </p>
     {{/if}}
-  {{/if}}
+  {{/unless}}
 </template>

@@ -23,6 +23,10 @@ Template.ParagraphsNewLink.helpers({
     } else {
       return false;
     }
+  },
+
+  hideAdminMenu: function () {
+    return Session.get('hideAdminMenu');
   }
 });
 
