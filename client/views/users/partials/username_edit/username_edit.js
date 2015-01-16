@@ -38,6 +38,10 @@ Template.UsernameEdit.helpers({
     } else {
       return 'disabled';
     }
+  },
+
+  currentUserEmail: function () {
+    return Meteor.user().emails[0].address;
   }
 });
 

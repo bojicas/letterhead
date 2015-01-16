@@ -10,4 +10,16 @@
   </div>
   <footer>
   </footer>
+
+  {{#if currentUser}}
+    {{#if hideAdminMenu}}
+      <div class="lh-show-popup">
+        <a href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+      </div>
+    {{else}}
+      <div class="lh-close-popup">
+        <a href="#" class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+      </div>
+    {{/if}}
+  {{/if}}
 </template>
