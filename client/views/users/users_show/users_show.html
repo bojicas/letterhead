@@ -17,6 +17,12 @@
           <div class="panel-heading">
             <h3 class="panel-title">User Settings</h3>
           </div>
+          {{#if currentUser.profile}}
+            <div class="panel-body">
+              <h4>{{currentUser.profile.displayName}}</h4>
+              <p>{{currentUser.profile.bio}}</p>
+            </div>
+          {{/if}}
           <div class="list-group">
             <a href="#" class="list-group-item {{activeSection 'username'}}" id="user-settings-username">Username</a>
             <a href="#" class="list-group-item {{activeSection 'profile'}}" id="user-settings-profile">Profile</a>
