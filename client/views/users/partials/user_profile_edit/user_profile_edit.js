@@ -11,7 +11,20 @@ Template.UserProfileEdit.events({
   'submit #profile-edit': function (e, tmpl) {
     e.preventDefault();
 
-    Alerts.set('Saving profile', 'success');
+    var displayName = tmpl.find('#displayName').value;
+    var bio = tmpl.find('#bio').value;
+
+    var profile = {
+      displayName: displayName,
+      bio: bio
+    };
+
+    Meteor.call('updateProfile', profile, function (error, result) {
+      if (error) {
+        return Alerts.set(error.reason);
+      }
+      Alerts.set('Profile updated', 'success');
+    });
   }
 });
 

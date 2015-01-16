@@ -14,11 +14,11 @@ Template.UsernameEdit.events({
     var readyToSubmit = confirm('Are you sure you want to submit? Changes can affect your login!');
 
     if (readyToSubmit) {
-      Meteor.call('updateProfile', user, function (error, result) {
+      Meteor.call('updateUsername', user, function (error, result) {
         if (error) {
           return Alerts.set(error.reason);
         }
-        Alerts.set('Profile updated', 'success');
+        Alerts.set('Username updated', 'success');
         Session.set('disabledUsernameInput', undefined);
       });
     }
