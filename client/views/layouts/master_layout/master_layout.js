@@ -8,25 +8,6 @@ Template.MasterLayout.events({
    *
    *  }
    */
-  'click .lh-close-popup': function (e) {
-    e.preventDefault();
-
-    $('.lh-navbar-block').hide();
-    $('.lh-breadcrumb').hide();
-    Session.set('hideAdminMenu', true);
-
-    Alerts.set('Hide the admin menu.', 'info');
-  },
-
-  'click .lh-show-popup': function (e) {
-    e.preventDefault();
-
-    $('.lh-navbar-block').show();
-    $('.lh-breadcrumb').show();
-    Session.set('hideAdminMenu', undefined);
-
-    Alerts.set('Show the admin menu.', 'info');
-  }
 });
 
 Template.MasterLayout.helpers({
@@ -36,9 +17,6 @@ Template.MasterLayout.helpers({
    *    return Items.find();
    *  }
    */
-  hideAdminMenu: function () {
-    return Session.get('hideAdminMenu');
-  }
 });
 
 /*****************************************************************************/

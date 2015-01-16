@@ -2,26 +2,29 @@
 /* PagesShow: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.PagesShow.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
   'click #new-paragraph-action': function (e) {
     e.preventDefault();
 
     Session.set('newParagraph', this._id);
+  },
+
+  'click #hide-admin-menu': function (e) {
+    e.preventDefault();
+
+    if (Session.get('hideAdminMenu')) {
+      Session.set('hideAdminMenu', false);
+      Alerts.set('Show admin menu.', 'info');
+    } else {
+      Session.set('hideAdminMenu', true);
+      Alerts.set('Hide admin menu', 'info');
+    }
   }
 });
 
 Template.PagesShow.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  hideAdminMenu: function () {
+    return Session.get('hideAdminMenu');
+  },
 
   paragraphs: function () {
     var paragraphsOrder = this.paragraphsOrder || 1;
@@ -73,12 +76,6 @@ Template.PagesShow.created = function () {
 };
 
 Template.PagesShow.rendered = function () {
-  if (Session.get('hideAdminMenu')) {
-    $('.lh-breadcrumb').hide();
-  } else {
-    $('.lh-breadcrumb').show();
-  }
-
   Session.set('editTitle', null);
   Session.set('newParagraph', null);
   Session.set('editParagraph', null);

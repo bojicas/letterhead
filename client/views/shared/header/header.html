@@ -1,5 +1,5 @@
 <template name="Header">
-  <div class="lh-navbar-block">
+  {{#unless hideAdminMenu}}
     <nav class="navbar navbar-default lh-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -34,5 +34,5 @@
         </div>
       </div>
     </nav>
-  </div>
+  {{/unless}}
 </template>

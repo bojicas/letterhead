@@ -37,11 +37,6 @@ Template.PagesIndex.created = function () {
 };
 
 Template.PagesIndex.rendered = function () {
-  if (Session.get('hideAdminMenu')) {
-    $('.lh-breadcrumb').hide();
-  } else {
-    $('.lh-breadcrumb').show();
-  }
 };
 
 Template.PagesIndex.destroyed = function () {

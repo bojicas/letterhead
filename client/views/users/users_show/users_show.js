@@ -45,11 +45,6 @@ Template.UsersShow.created = function () {
 
 Template.UsersShow.rendered = function () {
   Session.set('userSettings', 'username');
-  if (Session.get('hideAdminMenu')) {
-    $('.lh-breadcrumb').hide();
-  } else {
-    $('.lh-breadcrumb').show();
-  }
 };
 
 Template.UsersShow.destroyed = function () {

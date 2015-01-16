@@ -11,12 +11,9 @@ Template.Header.events({
 });
 
 Template.Header.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  hideAdminMenu: function () {
+    return Session.get('hideAdminMenu');
+  }
 });
 
 /*****************************************************************************/

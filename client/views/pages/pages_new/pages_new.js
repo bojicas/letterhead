@@ -37,11 +37,6 @@ Template.PagesNew.created = function () {
 };
 
 Template.PagesNew.rendered = function () {
-  if (Session.get('hideAdminMenu')) {
-    $('.lh-breadcrumb').hide();
-  } else {
-    $('.lh-breadcrumb').show();
-  }
 };
 
 Template.PagesNew.destroyed = function () {
