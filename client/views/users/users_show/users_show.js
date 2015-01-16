@@ -17,7 +17,7 @@ Template.UsersShow.events({
   'click #user-settings-profile': function(e) {
     e.preventDefault();
 
-    Session.set('userSettings', 'profile')
+    Session.set('userSettings', 'profile');
   }
 });
 
@@ -45,6 +45,11 @@ Template.UsersShow.created = function () {
 
 Template.UsersShow.rendered = function () {
   Session.set('userSettings', 'username');
+  if (Session.get('hideAdminMenu')) {
+    $('.lh-breadcrumb').hide();
+  } else {
+    $('.lh-breadcrumb').show();
+  }
 };
 
 Template.UsersShow.destroyed = function () {

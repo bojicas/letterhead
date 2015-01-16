@@ -26,6 +26,11 @@ Template.SettingsIndex.created = function () {
 };
 
 Template.SettingsIndex.rendered = function () {
+  if (Session.get('hideAdminMenu')) {
+    $('.lh-breadcrumb').hide();
+  } else {
+    $('.lh-breadcrumb').show();
+  }
 };
 
 Template.SettingsIndex.destroyed = function () {

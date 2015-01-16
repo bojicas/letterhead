@@ -73,6 +73,12 @@ Template.PagesShow.created = function () {
 };
 
 Template.PagesShow.rendered = function () {
+  if (Session.get('hideAdminMenu')) {
+    $('.lh-breadcrumb').hide();
+  } else {
+    $('.lh-breadcrumb').show();
+  }
+
   Session.set('editTitle', null);
   Session.set('newParagraph', null);
   Session.set('editParagraph', null);
