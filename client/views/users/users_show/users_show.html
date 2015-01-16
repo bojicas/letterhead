@@ -18,12 +18,18 @@
             <h3 class="panel-title">User Settings</h3>
           </div>
           <div class="list-group">
-            <a href="#" class="list-group-item active">Username</a>
+            <a href="#" class="list-group-item {{activeSection 'username'}}" id="user-settings-username">Username</a>
+            <a href="#" class="list-group-item {{activeSection 'profile'}}" id="user-settings-profile">Profile</a>
           </div>
         </div>
       </div>
 
-      {{> UsernameEdit}}
+      {{#if activeSection 'username'}}
+        {{> UsernameEdit}}
+      {{/if}}
+      {{#if activeSection 'profile'}}
+        {{> UserProfileEdit}}
+      {{/if}}
     </div>
   </div>
 </template>

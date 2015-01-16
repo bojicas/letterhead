@@ -8,6 +8,17 @@ Template.UsersShow.events({
    *
    *  }
    */
+  'click #user-settings-username': function (e) {
+    e.preventDefault();
+
+    Session.set('userSettings', 'username');
+  },
+
+  'click #user-settings-profile': function(e) {
+    e.preventDefault();
+
+    Session.set('userSettings', 'profile')
+  }
 });
 
 Template.UsersShow.helpers({
@@ -17,6 +28,13 @@ Template.UsersShow.helpers({
    *    return Items.find();
    *  }
    */
+  activeSection: function (section) {
+    if (Session.get('userSettings') === section) {
+      return 'active';
+    } else {
+      return '';
+    }
+  }
 });
 
 /*****************************************************************************/
@@ -26,6 +44,7 @@ Template.UsersShow.created = function () {
 };
 
 Template.UsersShow.rendered = function () {
+  Session.set('userSettings', 'username');
 };
 
 Template.UsersShow.destroyed = function () {
