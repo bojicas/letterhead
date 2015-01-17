@@ -18,6 +18,12 @@ Template.PagesNew.events({
     });
     Alerts.set('New page created.', 'success');
     Router.go('pages.show', { _id: pageId});
+  },
+
+  'click #cancel-new-page': function (e) {
+    e.preventDefault();
+
+    Router.go('pages.index');
   }
 });
 
