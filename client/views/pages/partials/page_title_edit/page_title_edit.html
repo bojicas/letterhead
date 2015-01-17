@@ -1,7 +1,11 @@
 <template name="PageTitleEdit">
   <form role="form" id="page-title-edit">
-    <div class="form-group">
-      <input type="text" class="form-control page-title-input" id="pageTitle" placeholder="Enter Title" value="{{title}}" />
+    <div class="input-group input-group-lg custom-title-group">
+      <input type="text" class="form-control input-lg page-title-input" id="pageTitle" placeholder="Enter Title" value="{{title}}" />
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <a href="#" class="btn btn-default" id="cancel-page-title-edit" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+      </span>
     </div>
   </form>
 </template>

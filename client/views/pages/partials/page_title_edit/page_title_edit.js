@@ -18,6 +18,12 @@ Template.PageTitleEdit.events({
     });
 
     Session.set('editTitle', null);
+  },
+
+  'click #cancel-page-title-edit': function (e) {
+    e.preventDefault();
+
+    Session.set('editTitle', null);
   }
 });
 
