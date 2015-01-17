@@ -1,12 +1,38 @@
 <template name="SettingsIndex">
-  <div class="col-xs-12 lh-breadcrumb">
-    <ol class="breadcrumb">
-      <li><a href="/">Letterhead</a></li>
-      <li>App Settings</li>
-    </ol>
-  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 lh-breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="/">Letterhead</a></li>
+          <li>App Settings</li>
+        </ol>
+      </div>
+    </div>
 
-  <div class="col-xs-12">
-    <p>Nothing Yet Here</p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">App Settings</h3>
+          </div>
+          <div class="panel-body">
+            <h4>Letterhead</h4>
+          </div>
+          <div class="list-group">
+            <a href="#" class="list-group-item {{activeSection 'general'}}" id="app-settings-general">General</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-8 col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">App Settings</h3>
+          </div>
+          <div class="panel-body">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>

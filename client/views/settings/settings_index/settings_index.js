@@ -11,12 +11,13 @@ Template.SettingsIndex.events({
 });
 
 Template.SettingsIndex.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  activeSection: function (section) {
+    if (Session.get('appSettings') === section) {
+      return 'active';
+    } else {
+      return '';
+    }
+  }
 });
 
 /*****************************************************************************/
@@ -26,11 +27,7 @@ Template.SettingsIndex.created = function () {
 };
 
 Template.SettingsIndex.rendered = function () {
-  if (Session.get('hideAdminMenu')) {
-    $('.lh-breadcrumb').hide();
-  } else {
-    $('.lh-breadcrumb').show();
-  }
+  Session.set('appSettings', 'general');
 };
 
 Template.SettingsIndex.destroyed = function () {
