@@ -13,10 +13,10 @@ Template.PagesShow.events({
 
     if (Session.get('hideAdminMenu')) {
       Session.set('hideAdminMenu', false);
-      Alerts.set('Show admin menu.', 'info');
+      Alerts.set('Admin menu is visible.', 'info');
     } else {
       Session.set('hideAdminMenu', true);
-      Alerts.set('Hide admin menu', 'info');
+      Alerts.set('Admin menu is hidden', 'info');
     }
   }
 });
