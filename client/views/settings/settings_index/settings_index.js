@@ -8,6 +8,26 @@ Template.SettingsIndex.events({
    *
    *  }
    */
+  'submit #general-settings': function (e, tmpl) {
+    e.preventDefault();
+
+    var branding = tmpl.find('#branding').value;
+    var disqusShortname = tmpl.find('#disqusShortname').value;
+    var googleTrackingId = tmpl.find('#googleTrackingId').value;
+
+    var settings = {
+      branding: branding,
+      disqusShortname: disqusShortname,
+      googleTrackingId: googleTrackingId
+    };
+
+    Meteor.call('updateSettings', settings, function (error, result) {
+      if (error) {
+        return Alerts.set(error.reason);
+      }
+      Alerts.set('Settings updated', 'success');
+    });
+  }
 });
 
 Template.SettingsIndex.helpers({
@@ -17,6 +37,10 @@ Template.SettingsIndex.helpers({
     } else {
       return '';
     }
+  },
+
+  settings: function () {
+    return Settings.findOne();
   }
 });
 

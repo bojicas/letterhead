@@ -14,6 +14,11 @@ App.helpers = {
 
   hideAdminMenu: function () {
     return Session.get('hideAdminMenu');
+  },
+
+  appBranding: function () {
+    var settings = Settings.findOne();
+    return settings.branding || 'Letterhead';
   }
 };
 
