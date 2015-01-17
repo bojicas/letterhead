@@ -30,10 +30,6 @@ Template.PagesShow.helpers({
     }
   },
 
-  hideAdminMenu: function () {
-    return Session.get('hideAdminMenu');
-  },
-
   paragraphs: function () {
     var paragraphsOrder = this.paragraphsOrder || 1;
     return Paragraphs.find({}, { sort: { rank: paragraphsOrder } });

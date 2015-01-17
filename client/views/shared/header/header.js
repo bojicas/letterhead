@@ -11,9 +11,6 @@ Template.Header.events({
 });
 
 Template.Header.helpers({
-  hideAdminMenu: function () {
-    return Session.get('hideAdminMenu');
-  }
 });
 
 /*****************************************************************************/

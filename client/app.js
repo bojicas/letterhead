@@ -10,6 +10,10 @@ App.helpers = {
     } else {
       return n + ' ' + thing + 's';
     }
+  },
+
+  hideAdminMenu: function () {
+    return Session.get('hideAdminMenu');
   }
 };
 
