@@ -20,7 +20,8 @@ Router.route('/pages/new', {
 });
 
 Router.route('/pages/:_id', {
-  name: 'pages.show'
+  name: 'pages.show',
+  fastRender: true
 });
 
 Router.route('/settings', {
