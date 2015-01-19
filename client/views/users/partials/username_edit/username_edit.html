@@ -2,7 +2,7 @@
   <div class="panel panel-default">
 
     <div class="panel-heading">
-      <h3 class="panel-title">Edit Username</h3>
+      <h3 class="panel-title">Edit Username and / or login email</h3>
     </div>
 
     <div class="panel-body">
@@ -19,6 +19,22 @@
           </span>
         </div>
       </form>
+      <br />
+      {{#each currentUser.emails}}
+        <form id="email-edit">
+          <div class="input-group">
+            <span class="input-group-addon">Email</span>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" value="{{address}}" {{disabledEmailInput}} />
+            <span class="input-group-btn">
+              {{#if disabledEmailInput}}
+                <a href="#" class="btn btn-primary" id="editEmail" value="Edit">Edit</a>
+              {{else}}
+                <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
+              {{/if}}
+            </span>
+          </div>
+        </form>
+      {{/each}}
     </div>
 
   </div>
