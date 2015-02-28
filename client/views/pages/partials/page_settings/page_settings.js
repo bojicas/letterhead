@@ -96,6 +96,18 @@ Template.PageSettings.events({
       });
       Alerts.set('Disqus comments disabled!', 'success');
     }
+  },
+
+  'change #showPublishedOn': function (e) {
+    if (e.target.checked) {
+      Pages.update(this._id, { $set: { showPublishedOn: true } });
+      Alerts.set('Show Published On Date', 'success');
+    } else {
+      Pages.update(this._id, {
+        $unset: { showPublishedOn: '' }
+      });
+      Alerts.set('Hide Published On Date', 'success');
+    }
   }
 
 });
@@ -143,6 +155,14 @@ Template.PageSettings.helpers({
 
   disqusEnabled: function () {
     if (this.disqus) {
+      return 'checked';
+    } else {
+      return '';
+    }
+  },
+
+  showPublishedOn: function () {
+    if (this.showPublishedOn) {
       return 'checked';
     } else {
       return '';
