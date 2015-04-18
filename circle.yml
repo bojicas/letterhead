@@ -10,8 +10,7 @@ dependencies:
 
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) cd app &&  CUCUMBER_TAGS='@server1' meteor --test --once --settings ../config/development/settings.json ;;
-        1) cd app && CUCUMBER_TAGS='@server1' meteor --test --once --setting ../config/development/settings.json ;; esac: 
+    - case $CIRCLE_NODE_INDEX in 0) cd app &&  CUCUMBER_TAGS='@server1' meteor --test --once --settings ../config/development/settings.json ;; 1) cd app && CUCUMBER_TAGS='@server1' meteor --test --once --setting ../config/development/settings.json ;; esac: 
         parallel: true
 
 deployment:
