@@ -12,7 +12,8 @@ dependencies:
 
 test:
   override:
-    - cd app && CUCUMBER_NODES=4 meteor --test --once --settings ../config/development/settings.json
+    - cd app && CUCUMBER_NODES=4 meteor --test --once --settings ../config/development/settings.json:
+        parallel: true
 
 deployment:
   produciotn:
