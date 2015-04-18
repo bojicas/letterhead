@@ -12,7 +12,7 @@ dependencies:
 
 test:
   override:
-    - cd app && meteor --test --once --settings dev.json
+    - cd app && meteor --test --once --settings ../config/development/settings.json
 
 deployment:
   produciotn:
