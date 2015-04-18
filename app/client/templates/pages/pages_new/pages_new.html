@@ -1,21 +1,23 @@
 <template name="PagesNew">
-  <div class="col-xs-12 lh-breadcrumb">
-    <ol class="breadcrumb">
-      <li><a href="/">Letterhead</a></li>
-      <li><a href="{{pathFor 'pages.index'}}">Pages</a></li>
-      <li>New</li>
-    </ol>
-  </div>
+  <div class="row">
+    <div class="col-xs-12 lh-breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="/">Letterhead</a></li>
+        <li><a href="{{pathFor 'pages.index'}}">Pages</a></li>
+        <li>New</li>
+      </ol>
+    </div>
 
-  <div class="col-xs-12">
-    <form role="form">
-      <div class="input-group input-group-lg custom-title-group">
-        <input type="text" class="form-control input-lg page-title-input" id="pageTitle" placeholder="Enter Title" value="{{title}}" />
-        <span class="input-group-btn">
-          <button class="btn btn-primary" type="submit">Submit</button>
-          <a href="#" class="btn btn-default" id="cancel-new-page" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-        </span>
-      </div>
-    </form>
+    <div class="col-xs-12">
+      <form role="form">
+        <div class="input-group input-group-lg custom-title-group">
+          <input type="text" class="form-control input-lg page-title-input" id="pageTitle" placeholder="Enter Title" value="{{title}}" />
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <a href="#" class="btn btn-default" id="cancel-new-page" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+          </span>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
