@@ -1,8 +1,9 @@
-[![Stories in Ready](https://badge.waffle.io/bojicas/letterhead.png?label=ready&title=Ready)](https://waffle.io/bojicas/letterhead)
 Letterhead
 ==========
 
 [![Hack bojicas/letterhead on Nitrous](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-s-v1-0616054bfad452919522f1d08ad1fddf.png)](https://www.nitrous.io/hack_button?source=embed&runtime=meteor&repo=bojicas%2Fletterhead&file_to_open=README.md)
+[![Codeship Status for bojicas/letterhead](https://codeship.com/projects/92a41550-c1c3-0132-0d23-3e8fc0e1eee2/status?branch=master)](https://codeship.com/projects/73638)
+[![Stories in Ready](https://badge.waffle.io/bojicas/letterhead.png?label=ready&title=Ready)](https://waffle.io/bojicas/letterhead)
 
 Digital content management system and blog platform, developed with Meteor.
 
