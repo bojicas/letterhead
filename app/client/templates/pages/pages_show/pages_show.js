@@ -89,6 +89,7 @@ Template.PagesShow.rendered = function () {
     Session.set('smartEditor', true);
   }
 
+  /* jshint ignore:start */
   // set up Google Analytics for pages
   var settings = Settings.findOne();
   var controller = Iron.controller();
@@ -104,6 +105,7 @@ Template.PagesShow.rendered = function () {
       'page': '/pages/' + controller.params._id
     });
   }
+  /* jshint ignore:end */
 
 };
 
