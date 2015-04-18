@@ -49,24 +49,24 @@
         {{/unless}}
       </article>
     </div>
-  </div>
 
-  <div class="container">
     <div class="row">
-      {{#if showComments}}
-        {{> Disqus}}
-      {{/if}}
+      <div class="col-xs-12">
+        {{#if showComments}}
+          {{> Disqus}}
+        {{/if}}
 
-      {{#if currentUser}}
-        <div class="lh-popup">
-          {{#if hideAdminMenu}}
-            {{> ParagraphsNewLink}}
-            <a href="#" id="hide-admin-menu" class="text-danger" title="Normal Screen / Show admin menu"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-          {{else}}
-            <a href="#" id="hide-admin-menu" class="text-primary" title="Full Screen / Hide admin menu"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
-          {{/if}}
-        </div>
-      {{/if}}
+        {{#if currentUser}}
+          <div class="lh-popup">
+            {{#if hideAdminMenu}}
+              {{> ParagraphsNewLink}}
+              <a href="#" id="hide-admin-menu" class="text-danger" title="Normal Screen / Show admin menu"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+            {{else}}
+              <a href="#" id="hide-admin-menu" class="text-primary" title="Full Screen / Hide admin menu"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
+            {{/if}}
+          </div>
+        {{/if}}
+      </div>
     </div>
   </div>
 
