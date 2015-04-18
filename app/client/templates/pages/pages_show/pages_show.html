@@ -1,67 +1,73 @@
 <template name="PagesShow">
 
-  <div class="row">
-    <article class="col-xs-12">
-      <header>
-        {{#if editTitle}}
-          {{> PageTitleEdit}}
-        {{else}}
-          {{> PageTitleShow}}
-        {{/if}}
-      </header>
-
-      {{#if liveBlogging}}
-        {{#unless hideAdminMenu}}
-          {{> ParagraphsNewLink}}
-        {{/unless}}
-        {{#if newParagraph}}
-          {{> ParagraphsNew}}
-        {{/if}}
-      {{/if}}
-
-      {{#each paragraphs}}
-        <div>
-          {{#if editParagraph}}
-            {{> ParagraphsEdit}}
+  <div class="container">
+    <div class="row">
+      <article class="col-xs-12">
+        <header>
+          {{#if editTitle}}
+            {{> PageTitleEdit}}
           {{else}}
-            {{#if currentUser}}
-              <div class="hover-paragraph">
-                <p>
-                  {{{content}}}
-                  {{> ParagraphActions}}
-                </p>
-              </div>
-            {{else}}
-              <p>{{{content}}}</p>
-            {{/if}}
+            {{> PageTitleShow}}
           {{/if}}
-        </div>
-      {{/each}}
+        </header>
 
-      {{#unless liveBlogging}}
-        {{#unless hideAdminMenu}}
-          {{> ParagraphsNewLink}}
-        {{/unless}}
-        {{#if newParagraph}}
-          {{> ParagraphsNew}}
+        {{#if liveBlogging}}
+          {{#unless hideAdminMenu}}
+            {{> ParagraphsNewLink}}
+          {{/unless}}
+          {{#if newParagraph}}
+            {{> ParagraphsNew}}
+          {{/if}}
         {{/if}}
-      {{/unless}}
-    </article>
+
+        {{#each paragraphs}}
+          <div>
+            {{#if editParagraph}}
+              {{> ParagraphsEdit}}
+            {{else}}
+              {{#if currentUser}}
+                <div class="hover-paragraph">
+                  <p>
+                    {{{content}}}
+                    {{> ParagraphActions}}
+                  </p>
+                </div>
+              {{else}}
+                <p>{{{content}}}</p>
+              {{/if}}
+            {{/if}}
+          </div>
+        {{/each}}
+
+        {{#unless liveBlogging}}
+          {{#unless hideAdminMenu}}
+            {{> ParagraphsNewLink}}
+          {{/unless}}
+          {{#if newParagraph}}
+            {{> ParagraphsNew}}
+          {{/if}}
+        {{/unless}}
+      </article>
+    </div>
   </div>
 
-  {{#if showComments}}
-    {{> Disqus}}
-  {{/if}}
+  <div class="container">
+    <div class="row">
+      {{#if showComments}}
+        {{> Disqus}}
+      {{/if}}
 
-  {{#if currentUser}}
-    <div class="lh-popup">
-      {{#if hideAdminMenu}}
-        {{> ParagraphsNewLink}}
-        <a href="#" id="hide-admin-menu" class="text-danger" title="Normal Screen / Show admin menu"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-      {{else}}
-        <a href="#" id="hide-admin-menu" class="text-primary" title="Full Screen / Hide admin menu"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
+      {{#if currentUser}}
+        <div class="lh-popup">
+          {{#if hideAdminMenu}}
+            {{> ParagraphsNewLink}}
+            <a href="#" id="hide-admin-menu" class="text-danger" title="Normal Screen / Show admin menu"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+          {{else}}
+            <a href="#" id="hide-admin-menu" class="text-primary" title="Full Screen / Hide admin menu"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span></a>
+          {{/if}}
+        </div>
       {{/if}}
     </div>
-  {{/if}}
+  </div>
 
 </template>
