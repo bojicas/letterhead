@@ -19,4 +19,4 @@ deployment:
     branch: master
     commands:
       - cd app && meteor build ../build/
-      - cd ../build && scp app.tar.gz root@bojica.com:~ && ssh root@bojica.com 'cd /root && ./deploy.sh'
+      - cd build && scp app.tar.gz root@bojica.com:~ && ssh root@bojica.com 'cd /root && ./deploy.sh'
