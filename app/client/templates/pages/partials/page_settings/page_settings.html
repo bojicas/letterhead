@@ -53,27 +53,29 @@
 
       <br/>
 
-      <div class="well well-sm col-sm-12">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="paragraphsOrder" {{checkedParagraphsOrder}}> Live Blogging (reverse paragraphs order)
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="disqusComments" {{disqusEnabled}}> Enable Disqus Comments
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="showPublishedOn" {{showPublishedOn}}> Show Published On Date
-          </label>
+      <div class="row">
+        <div class="well well-sm col-sm-12">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="paragraphsOrder" {{checkedParagraphsOrder}}> Live Blogging (reverse paragraphs order)
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="disqusComments" {{disqusEnabled}}> Enable Disqus Comments
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="showPublishedOn" {{showPublishedOn}}> Show Published On Date
+            </label>
+          </div>
+
         </div>
 
+        <hr/>
+        <a class="btn btn-default" id="cancel-page-settings" href="#" role="button">Cancel</a>
       </div>
-
-      <hr/>
-      <a class="btn btn-default" id="cancel-page-settings" href="#" role="button">Cancel</a>
     </div>
   </div>
 </template>
