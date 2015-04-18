@@ -1,0 +1,22 @@
+:
+  cache_directories:
+    - "~/.meteor"
+
+  override:
+    - meteor || curl https://install.meteor.com | /bin/sh
+    - meteor --version
+    - npm -version
+    - node -v
+    - npm install -g url
+    - npm install -g assert
+
+test:
+  override:
+    - cd app && CUCUMBER_NODES=4 meteor --test --once --settings ../config/development/settings.json
+
+deployment:
+  produciotn:
+    branch: master
+    commands:
+      - cd app && meteor build ../build/
+      - cd build && scp app.tar.gz root@bojica.com:~ && ssh root@bojica.com 'cd /root && ./deploy.sh'
