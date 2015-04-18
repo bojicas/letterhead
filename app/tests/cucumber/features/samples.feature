@@ -1,3 +1,4 @@
+@server2
 Feature: One-liner description of this features
 
   As a [role]
