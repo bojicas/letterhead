@@ -4,9 +4,6 @@ dependencies:
 
   override:
     - meteor || curl https://install.meteor.com | /bin/sh
-    - meteor --version
-    - npm -version
-    - node -v
 
   post:
     - wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar
@@ -15,11 +12,4 @@ dependencies:
 
 test:
   override:
-    - cd app &&  SELENIUM_BROWSER=chrome meteor --test --once --settings ../config/development/settings.json
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - cd app && meteor build ../build/
-      - cd build && scp app.tar.gz root@bojica.com:~ && ssh root@bojica.com 'cd /root && ./deploy.sh'
+    - cd app && meteor --test --once --settings ../config/development/settings.json
