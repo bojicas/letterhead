@@ -7,10 +7,11 @@ dependencies:
     - meteor --version
     - npm -version
     - node -v
-    
-  - wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
-  - java -jar selenium-server-standalone-2.44.0.jar:
-      background: true
+
+  post:
+    - wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
+    - java -jar selenium-server-standalone-2.44.0.jar:
+        background: true
 
 test:
   override:
