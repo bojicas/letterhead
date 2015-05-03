@@ -1,11 +1,11 @@
 @server2
-Feature: Main Page
+Feature: Login Page
 
   As a new user
   I want to login in Letterhead
   So that I can start working with it
 
-  Scenario: New user should be able to login with default credentials
+  Scenario: New user logs in with default credentials
     Given I am a new user
     When I navigate to "/"
     And I click on login dropdown list
