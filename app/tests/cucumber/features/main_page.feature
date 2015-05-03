@@ -5,7 +5,7 @@ Feature: Main Page
   I want to access Letterhead
   So that I can start working with it
 
-  Scenario:
+  Scenario: New user should have access to the main page
     Given I am a new user
     When I navigate to "/"
     Then I should see the title "Letterhead"
