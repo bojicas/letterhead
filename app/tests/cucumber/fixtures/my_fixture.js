@@ -4,9 +4,18 @@
 
   Meteor.methods({
     'reset' : function() {
-      // you can do some resetting of your app here
-      // fixture code will only execute inside mirrors neither runs
-      // inside the main app nor gets bundled to production.
+      Paragraphs.remove({});
+      Pages.remove({});
+      Settings.remove({});
+      Meteor.users.remove({});
+      // create user
+      Accounts.createUser({
+        username: 'admin',
+        password: 'admin',
+        email: 'admin@example.com'
+      });
+      // add settings record
+      Settings.insert({});
     }
   });
 

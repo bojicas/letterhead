@@ -18,6 +18,7 @@
     this.When(/^I click on sign in button$/, function (callback) {
       this.browser.
         click('#login-buttons-password').
+        pause(300).
         call(callback);
     });
 

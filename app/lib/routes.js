@@ -11,6 +11,13 @@ Router.route('/', {
   name: 'marketing'
 });
 
+Router.route('/sign-out', {
+  onBefaoreAction: function () {
+    Meteor.logout();
+    Router.go('marketing');
+  }
+});
+
 Router.route('/pages', {
   name: 'pages.index'
 });

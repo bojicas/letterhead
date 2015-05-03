@@ -7,12 +7,17 @@
     // You can use normal require here, cucumber is NOT run in a Meteor context (by design)
     var url = require('url');
 
+    this.Before(function (callback) {
+      global.ddp.call('reset', [], callback);
+    });
+
     this.Given(/^I am a new user$/, function (callback) {
       this.browser.
         setViewportSize({
           width: 1024,
           height: 768
         }, true).
+        url(url.resolve(process.env.HOST, 'sign-out')).
         pause(300).
         call(callback);
       // no callbacks! DDP has been promisified so you can just return it

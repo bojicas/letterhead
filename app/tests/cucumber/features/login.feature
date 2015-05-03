@@ -1,4 +1,4 @@
-@server1
+@server2
 Feature: Main Page
 
   As a new user
