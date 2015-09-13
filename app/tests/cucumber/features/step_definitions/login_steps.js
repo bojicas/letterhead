@@ -6,20 +6,18 @@
 
     var url = require('url');
 
-    this.When(/^I click on login dropdown list$/, function (callback) {
+    this.When(/^I click on login dropdown list$/, function () {
       var selector = '#login-dropdown-list a.dropdown-toggle';
-      this.browser.
+      return this.browser.
         waitForVisible(selector).
         click(selector).
-        pause(300).
-        call(callback);
+        pause(300);
     });
 
-    this.When(/^I click on sign in button$/, function (callback) {
-      this.browser.
+    this.When(/^I click on sign in button$/, function () {
+      return this.browser.
         click('#login-buttons-password').
-        pause(300).
-        call(callback);
+        pause(300);
     });
 
   };

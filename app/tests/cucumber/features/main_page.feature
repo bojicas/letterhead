@@ -5,6 +5,7 @@ Feature: Main Page
   I want to access Letterhead
   So that I can start working with it
 
+  @dev
   Scenario: New user visits main page
     Given I am a new user
     When I navigate to "/"

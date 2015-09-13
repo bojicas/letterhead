@@ -5,6 +5,7 @@ Feature: Login Page
   I want to login in Letterhead
   So that I can start working with it
 
+  @dev
   Scenario: New user logs in with default credentials
     Given I am a new user
     When I navigate to "/"
