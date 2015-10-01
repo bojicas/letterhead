@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 less
 twbs:bootstrap
 ian:accounts-ui-bootstrap-3
@@ -18,6 +17,18 @@ bojicas:bootstrap-alerts
 tsega:bootstrap3-datetimepicker
 momentjs:moment
 fortawesome:fontawesome
-msavin:mongol
-xolvio:cucumber
 meteorhacks:fast-render
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
