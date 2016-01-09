@@ -16,7 +16,9 @@ caching-html-compiler@1.0.2
 callback-hook@1.0.4
 check@1.1.0
 chuangbo:cookie@1.1.0
+coffeescript@1.0.11
 copleykj:jquery-autosize@1.17.8
+cosmos:browserify@0.9.3
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
@@ -46,6 +48,7 @@ iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
 jquery@1.11.4
+jsx@0.2.3
 launch-screen@1.0.4
 less@2.5.1
 livedata@1.0.15
@@ -72,6 +75,11 @@ pntbr:js-yaml-client@0.0.1
 promise@0.5.1
 random@1.0.5
 rate-limit@1.0.0
+react@0.14.3
+react-meteor-data@0.2.4
+react-runtime@0.14.4
+react-runtime-dev@0.14.4
+react-runtime-prod@0.14.4
 reactive-dict@1.1.3
 reactive-var@1.0.6
 reload@1.1.4
