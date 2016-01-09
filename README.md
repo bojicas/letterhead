@@ -8,7 +8,7 @@ Digital content management system and blog platform, developed with Meteor.
 Product Page
 ------------
 
-* [http://letterhead.io](http://letterhead.io)
+* [http://silviu.bojica.com](http://silviu.bojica.com)
 
 Note
 ----
