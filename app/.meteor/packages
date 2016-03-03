@@ -8,7 +8,6 @@ twbs:bootstrap
 ian:accounts-ui-bootstrap-3
 accounts-password
 sacha:spin
-spiderable
 perak:codemirror
 copleykj:jquery-autosize
 iron:router
