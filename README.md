@@ -8,7 +8,7 @@ Digital content management system and blog platform, developed with Meteor.
 Product Page
 ------------
 
-* [http://silviu.bojica.com](http://silviu.bojica.com)
+* [http://silviu.bojica.com/pages/letterhead](http://silviu.bojica.com/pages/letterhead)
 
 Note
 ----
