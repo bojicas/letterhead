@@ -16,7 +16,6 @@ tsega:bootstrap3-datetimepicker
 momentjs:moment
 fortawesome:fontawesome
 meteorhacks:fast-render
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -32,3 +31,5 @@ spacebars
 check
 fourseven:scss
 dfischer:prerenderio
+standard-minifier-css
+standard-minifier-js
